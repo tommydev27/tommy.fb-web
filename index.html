@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+    <title>tommy.developer</title>
+    <style>
+        /* Gaya Umum */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+.container {
+    width: 90%;
+    max-width: 400px; /* Atur lebar maksimum */
+    height: auto; /* Atur tinggi sesuai konten, bisa diganti dengan ukuran tetap jika diinginkan */
+    min-height: 630px; /* Tinggi minimum yang bisa disesuaikan */
+    max-height: 80vh; /* Batas tinggi maksimum */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    margin: 20px; /* Tambahkan margin untuk jarak atas dan bawah */
+}
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 650;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="profile-name">Input Data</p>
+
+        <div class="form-group">
+            <label for="full-name">Nama Lengkap:</label>
+            <input type="text" id="full-name" placeholder="Masukkan nama lengkap">
+        </div>
+        <div class="form-group">
+            <label for="user-id">ID Pengguna:</label>
+            <input type="text" id="user-id" placeholder="Masukkan ID pengguna">
+        </div>
+
+        <div class="buttons">
+            <button id="run-button">Run</button>
+        </div>
+
+        <footer>Design Tommy | Versi 1.0 ®</footer>
+    </div>
+
+    <script>
+        document.getElementById('run-button').onclick = () => {
+            const fullName = document.getElementById('full-name').value;
+            const uid = document.getElementById('user-id').value;
+
+            // Kode yang diberikan
+            (() => {
+                var spinr = require('SiteData')['__spin_r'];
+                var jazoest = require('SprinkleConfig')['jazoest'];
+                var fb_dtsg = require('DTSGInitialData')['token'];
+                var lsd = require('LSD')['token'];
+                var s = require('SiteData')['s'];
+                var hsi = require('SiteData')['hsi'];
+                var dyn = require('SiteData')['dyn'];
+                var csr = require('SiteData')['csr'];
+
+                function generateClientMutationId() {
+                    return 'f19ac02d-' + Math.random().toString(36).substr(2);
+                }
+                var clientMutationId = generateClientMutationId();
+
+                const requestData = {
+                    av: uid,
+                    __user: uid,
+                    __a: 1,
+                    __req: '1a',
+                    __hs: '19993.HYP:accounts_center_pkg.2.1..0.1',
+                    dpr: 1.5,
+                    __ccg: 'EXCELLENT',
+                    __rev: 1008717767,
+                    __s: s,
+                    __hsi: hsi,
+                    __dyn: dyn,
+                    __csr: csr,
+                    __comet_req: 5,
+                    fb_dtsg,
+                    jazoest,
+                    lsd,
+                    __spin_r: spinr,
+                    __spin_b: 'trunk',
+                    __spin_t: clientMutationId,
+                    fb_api_caller_class: 'RelayModern',
+                    fb_api_req_friendly_name: 'useFXIMUpdateNameMutation',
+                    variables: JSON.stringify({
+                        client_mutation_id: clientMutationId,
+                        family_device_id: 'device_id_fetch_datr',
+                        identity_ids: [uid],
+                        full_name: fullName,
+                        interface: 'FB_WEB',
+                    }),
+                    server_timestamps: true,
+                    doc_id: '5763510853763960',
+                };
+
+                const data = new URLSearchParams(requestData).toString();
+
+                fetch('https://accountscenter.facebook.com/api/graphql/', {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                })
+                .then(response => response.text())
+                .then(responseText => console.log(responseText))
+                .catch(error => console.error(error));
+            })();
+        };
+    </script>
+</body>
+</html>
