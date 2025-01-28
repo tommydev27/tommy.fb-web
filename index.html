@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
-    <title>tommy.developer</title>
+  <meta name="google-site-verification" content="pwKvYalfLxSFwpDlCsan4yS_mEsUdJvUDrI2wKiIHXk" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Tommy Website">
+<meta property="og:description" content="Create stunning AI-generated images with ease using Tommy APP.">
+<meta property="og:image" content="https://iili.io/24TAJ6b.md.jpg">
+<meta property="og:url" content="https://tommydev27.github.io/Image-Creator-AI/">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="1245016886587008">
+
+  <title>Image Creator AI</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK1EY26W82"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FK1EY26W82');
+</script>
+ </heade>
+    </body>
     <style>
-        /* Gaya Umum */
+  
         * {
             margin: 0;
             padding: 0;
@@ -15,161 +38,853 @@
         }
 
         body {
+            background-image: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            color: #333;
         }
 
 .container {
-    width: 90%;
-    max-width: 400px; /* Atur lebar maksimum */
-    height: auto; /* Atur tinggi sesuai konten, bisa diganti dengan ukuran tetap jika diinginkan */
-    min-height: 630px; /* Tinggi minimum yang bisa disesuaikan */
-    max-height: 80vh; /* Batas tinggi maksimum */
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-    margin: 20px; /* Tambahkan margin untuk jarak atas dan bawah */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    overflow: hidden; 
 }
 
-        .profile-name {
-            font-size: 24px;
-            font-weight: 650;
-            margin-top: 15px;
-            margin-bottom: 5px;
+        .profile-image-container {
+            margin-bottom: 50px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .form-group input {
+        .profile-image {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin-top: 5px;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .buttons {
-            margin-top: 20px;
+        .circle-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            border: 3px solid #0073eff9 ;
+            position: absolute;
+            top: 130px;
+            left: 90px;
+            padding: 4px;
+            transform: translateX(-50%);
+            background-color: white;
         }
+        
 
-        .buttons button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.unique-controls {
+    position: relative;
+    padding: 15px;
+}
 
-        .buttons button:hover {
-            background-color: #0056b3;
+.song-info h2 {
+    font-size: 25px;
+    color: black;
+    margin: 0;
+    margin-left: 15px;
+    margin-top: 0px;
+  
+  padding: 0;
+  line-height: 1;
+}
+
+.fas.fa-check-circle {
+    font-size: 20px;
+    color: #0073eff9;
+    margin-left: 5px;
+    border-radius: 50%;
+    }
+
+        .profile-description {
+            font-size: 10px;
+            color: gray;
+            margin-top: 0px;
+            margin-left: 18px;
         }
 
         footer {
-            margin-top: 15px;
+            margin-top: 8px;
             font-size: 12px;
-            color: #007bff;
+            color: gray;
+            transition: color 0.3s ease;
         }
+
+        .settings-card {
+            display: none;
+            }
+            
+        h2 {
+        font-size: 12px;
+        color: #333333;
+        gap: 0px;
+        margin-top: 10px;
+        }
+        
+        #profil-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 10px auto;
+            background: #fff;
+            overflow: hidden;
+        }
+        #profil-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+
+        }
+        
+        #profil-header button {
+            padding: 10px 15px;
+            
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        #profil-header button:hover {
+            background-color: #d2d4d5;
+        }
+        #scroll-buttons {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        #scroll-buttons span,
+        #profil-detail i {
+          margin-right: 8px;
+          color: #333;
+         font-size: 15px;
+        }
+        
+        #scroll-buttons button {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+            padding: 8px 12px;
+            background-color: #edeeef;
+            color: #333;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        #scroll-buttons button:hover {
+            background-color: #ddd;
+        }
+        #scroll-buttons span {
+            margin-right: 5px;
+        }
+
+        #profil-tabs {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ddd;
+            background-color: #f8f9fa;
+        }
+        #profil-tabs div {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+        }
+        #profil-tabs div.active {
+            border-bottom: 3px solid #0073eff9;
+            color: #0073eff9;
+        }
+        #profil-content {
+            padding: 15px;
+        }
+        #profil-content > div {
+            display: none;
+        }
+        #profil-content > div.active {
+            display: block;
+        }
+
+
+
+
+        #profil-detail {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        #profil-detail i {
+            margin-right: 8px;
+            color: #6c757d;
+            font-size: 18px;
+        }
+        
+        p {
+          padding: 0px; margin-top: 5px; margin-bottom: 5px;
+        }
+        
+        
+   .profile-container {
+      padding: 15px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+    }
+    .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 5px;
+      border: 1px solid #3855fe;
+    }
+    .profile-pic img {
+      width: 100%;
+      height: auto;
+    }
+    .profile-info {
+      flex: 1;
+
+    }
+    .profile-info h4 {
+      margin: 0;
+      font-size: 20px;
+      margin-top: -8px;
+      font-weight: bold;
+    }
+    .profile-info small {
+      color: #606770;
+    }
+    .content img {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .private-icon {
+      margin-left: 5px;
+      font-size: 12px;
+      color: #606770;
+    }
+    
+    
+ #Ai {
+  padding: 0px;
+  margin: auto;
+  border-radius: 10px;
+}
+#Ai h1 {
+  font-size: 19px;
+  margin-top: 15px;
+  text-align: left; 
+}
+
+#Ai p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  text-align: left; 
+
+}
+
+    .promptBox {
+      width: 100%;
+      height: 95px;
+      margin-top: 10px;
+      padding: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #789da4;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+
+    /* Gaya Loader */
+    .loader {
+      display: none;
+      border: 5px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 5px solid #03b90a;
+      width: 25px;
+      height: 25px;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Gaya Output */
+    #image-container img {
+      width: 100%;
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    #iconunique-container {
+    border: 2px solid #d7e5e2;
+    position: absolute;
+    top: 69px;
+    margin-left: 64px;
+    background-color: #0073eff9;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 50px;
+    }
+    
+    /* Gaya untuk tanggal dan waktu */
+.date-time {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #616367;
+  margin-left: 0px;
+  padding: 2px;
+  transform: skew(-10deg);
+  font-family: 'Orbitron', sans-serif;
+  }
+    
+    
+.stats {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.gray {
+    color: gray;
+    font-weight: normal;
+}
+
+button {
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+        .image-slider-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        background-color: #cfdcde;
+        padding: 5px;
+        border-radius: 8px;
+
+    }
+    .image-slider {
+        display: flex;
+        gap: 10px;
+                margin-top: -10px;
+    }
+    .slider-image {
+        width: 100px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .slider-image:hover {
+        transform: scale(1.03); 
+    transition: transform 0.1s ease; 
+      }
+      
+
     </style>
 </head>
 <body>
     <div class="container">
-        <p class="profile-name">Input Data</p>
+      <h1 style="background-color: #ffffff; padding: 10px; font-size: 23px; color: #0073eff9; font-family: 'Helvetica', 'Arial', sans-serif;"> Tommy Website <i style="font-size: 20px;  margin-left: 130px;" class="fab fa-facebook"></i></h1>
+      
+        <div class="profile-card">
+            <div class="profile-image-container">
+                <img src="https://iili.io/2sQegLl.md.jpg" alt="Alex Musk" class="profile-image">
+                            
+                <img src="https://iili.io/2CHtVnt.md.jpg" alt="Profile" class="circle-image">
+            </div>
+            
 
-        <div class="form-group">
-            <label for="full-name">Nama Lengkap:</label>
-            <input type="text" id="full-name" placeholder="Masukkan nama lengkap">
-        </div>
-        <div class="form-group">
-            <label for="user-id">ID Pengguna:</label>
-            <input type="text" id="user-id" placeholder="Masukkan ID pengguna">
-        </div>
+        <!-- Song Info -->
 
-        <div class="buttons">
-            <button id="run-button">Run</button>
-        </div>
+        <div class="song-info">
+            <h2 id="song-title">Tommy<i class="fas fa-check-circle"></i> <a id="song-title" style="font-family: 'Orbitron', sans-serif; font-size: 22px; color: #015a78;">&nbsp WEBSITE V<i style=" font-size: 20px;" class="fab fa-dev"></i>.1.0 </a>
 
-        <footer>Design Tommy | Versi 1.0 ®</footer>
+     <p> 
+      <span>︻</span><span style="color: #9d4801;">み</span><span style="color: #df052a;">✪</span><span style="color: #8d1105;">🝛</span><span>━━─────╼ &nbsp<i style="color: #ac0101;" class="fab fa-earlybirds"></i>
+      <p id="song-title" style="font-family: 'Orbitron', sans-serif; font-size: 22px; color:#cb0101;">Unlimited creativity 
+      <i style="color: #ae0000da;" class="fab fa-optin-monster"></i>
+      <i style="color: #2C98F0;" class="fab fa-skyatlas"></i>
+      <i style="color: green;" class="fab fa-wolf-pack-battalion"></i> 
+   </p> ⎝⚈⎞⏠⎛⚆⎠
+   <i style="color: grey; font-size: 30px;" class="fas fa-chess"></i>
+   <i style="color: #8405a3; font-size: 30px;" class="fas fa-chess-knight"></i>
+      <a id="song-title" style="font-family: 'Orbitron', sans-serif; font-size: 30px; color:#00882d;">2025
+   <i style="color: #F56E22;" class="fas fa-dice"></i>
+    </a>
+    
+<div class="stats">
+    <span id="followers-count" class="bold">983</span> <span class="gray">pengikut</span> • 
+    <span class="bold">0</span> <span class="gray">mengikuti</span>
+</div>
+
+    
+     <div id="timeContainer">
+        <p id="dateTime" class="date-time"></p>
+         </h2>
+      </div>
+      
+            <p class="profile-description">Design Tommy  Official | Website APP V0.1.0</p>
+
+    <div id="profil-container">
+        <div id="profil-header">
+            <button id="btn-ikuti" style="background-color: #0073eff9;">
+    <i class="fas fa-thumbs-up"></i> Suka
+</button>
+
+<button id="btn-pesan" style="color: #333;" onclick="window.location.href='https://m.me/tommy27110';">
+  <i class="fab fa-facebook-messenger"></i> Kirim pesan
+</button>
+
+        </div>
+<div id="scroll-buttons">
+    <button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')">
+        <i class="fab fa-gg-circle"></i>&nbsp;AI creativity
+    </button>
+            <button onclick="redirect('https://tommydev27.github.io/Keyboardtmdev/')">
+                <i style="font-size: 12px; "class="fas fa-keyboard">&nbsp;</i>Keyboard 
+            </button>
+            <button onclick="redirect('https://tommydev27.github.io/tommydev2711/')">
+                <i style="font-size: 12px; "class="fab fa-google-wallet">&nbsp;</i>String Text
+            </button>
+            <button onclick="redirect('https://tommydev27.github.io/tommy.website3/')">
+                <i style="font-size: 12px; "class="fas fa-id-card-alt">&nbsp;</i>Ascii ART
+            </button>
+            <button onclick="redirect('https://tommydev27.github.io/tommy.website-demo/')">
+                <i style="font-size: 12px; "class="fa fa-info-circle">&nbsp;</i>Info Website
+            </button>
+        </div>
+     </div>
+   </div>
+        
+  <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%;display: flex; padding: 4px; margin-top: 10px;">
+        
+    <div id="profil-tabs">
+        <div id="tab-postingan" class="active" onclick="showTab('postingan')">Postingan</div>
+        <div id="tab-tentang" onclick="showTab('tentang')">Tentang</div>
+        
+        
+<div id="tab-foto" onclick="showFoto()">Foto</div>
+<div id="foto-content" style="display: none;">
+    <img src="https://via.placeholder.com/300" alt="Foto">
+</div>
+    </div>
+    
+    <div id="profil-content">
+        <div id="content-postingan" class="active">
+        </div>
+        <div id="content-tentang">
+            <p><i style=" font-size: 16px; "class="fab fa-creative-commons-by">&nbsp;Design Tommy Developer | version 0.1.0</p></i>
+        </div>
+        <div id="content-foto">
+            <p>Galeri foto pengguna.</p>
+        </div>
+    </div>
+            
+  <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;">
+  </hr>
+     <!-- Tombol dengan ikon -->
+
+  <div class="profile-container">
+    <div class="header">
+      <div class="profile-pic">
+        <img src="https://iili.io/2CHtVnt.md.jpg" alt="Foto Profil">
+      </div>
+      <div class="profile-info">
+        <h4>Tommy Website <i style="font-size:17px; margin-left: 0px; "class="fas fa-check-circle"></i></h2> </span></h4>
+        <small style="font-size: 12px;">Design Tommy | V0.1.0 • <i style="font-size:12px; margin-left: 0px; color: #898989;"class="fas fa-globe-americas"></i></small>
+      </div>
+    </div>
+    <div class="content">
+  </div>
+  
+     <!-- Konten -->
+     <div id="content-container">
+
+      <section id="Ai" class="content">
+          <h1>Hasilkan Gambar</h1>
+            <p>Hasilkan gambar unik dengan prompt sederhana. hasil empat gambar.</p>
+
+
+          
+
+    <!-- Slider untuk gambar kecil -->
+        <div class="unique-container">
+    <div class="image-slider-container">
+        <div class="image-slider">
+          
+            <img src="https://iili.io/26PHCYb.md.jpg" alt="Gambar 1" class="slider-image" data-prompt="A hyper-realistic photo of a lush green forest with sunlight filtering through the trees, highly detailed textures, natural lighting, and sharp focus.
+                  Chinese women's high-detail hair (Quality hair details: 1.1) Clear eyes, double eyelids look good, sharp eye makeup, Create the beauty of eyelash makeup, thin eyebrows, highly detailed eyes, sharp nose, beautiful red lips, rosy cheeks , With delicate makeup on her face, beautiful face, Perfectly proportional face shape, （Advanced facial details：1.1）A Chinese girl sits on a throne, the throne is inlaid with precious stones, surrounded by Chinese phoenix beasts, gold and color rubies, unique monster illustration, Dau al set, high resolution, bright realistic, super high resolution, complex, super detailed, (skin dent), cute, feminine, body details, ( Facial details: 1.1), (contoured iris), (perfect eyes), 4k, beautiful, (masterpiece: 1.2), (best quality: 1.2), beautiful closed long dress, dynamic pose, rich colors, light and shadow film, red and gold clothes, realism, my eyes are very bright, original picture. HD.">
+                  
+            <img src="https://iili.io/266R6tS.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="Korean A stunning, elegant fantasy-inspired gown with intricate gold and pearl embellishments, featuring a glowing central design and ethereal details. The dress has a transparent and flowing fabric with ornate patterns, creating a majestic and celestial appearance. Designed to reflect beauty, grace, and sophistication, worn by a regal and radiant figure in a grand setting.">
+
+            <img src="https://iili.io/2rUEPCg.md.jpg" alt="Gambar 4" class="slider-image" data-prompt="beautiful Korean mermaid, underwater view filled with coral, seaweed, sand, colorful glass, Koi fish (Cyprinus carpio), Discus fish (Symphysodon spp.), Guppy fish (Poecilia reticulata) Betta fish (Betta splendens), lively comet fish (Carassius auratus), and gentle sea turtles">
+               <img src="https://iili.io/26PJBVI.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="A beautiful dance on ice featuring two enchanting fairies, dressed in glossy dresses, realistic and fantastical atmosphere, ethereal lighting, intricate details, whimsical background, soft glows, elegant poses, magical winter scenery">
+              <img src="https://iili.io/2rQ2LF9.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="a beautiful Korean woman, with long wings like a butterfly with colorful patterns, with flowing neon sand light, very beautiful, sky garden background">
+              <img src="https://iili.io/2rQJYwQ.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="fotorealistick, masterpiece, Highest quality, Very detailed, Japaese アンDroid girl,Portraiture,Plump,Thick,Control panel,アンDroid,Droid,Mechanical Hand, robotの腕と脚, Black Hair,Blunt bangs,perfect robot girl,Long tube,A thick cable was attached to her neck.,アンDroid,robot,humanoid,cyborg,japanese cyborg girl ,robot-assembly plant,She is now assembling,Assembly scene,Chubby,Squat">
+              <img src="https://iili.io/2rBeIcl.md.jpg" alt="Gambar 3" class="slider-image" data-prompt="Create images of glowing goldfish with morning dew seaweed and crystal roses with white neon light. Beautiful Korean mermaid woman dressed in Real HD realistic batik sitting on very big and beautiful flowers">
+            <img src="https://iili.io/2rUJkJt.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="A realistic depiction of a Chinese noblewoman warrior in detailed traditional royal attire, wielding a sword with intricate engravings. She is unleashing a powerful whirlwind, surrounded by glowing neon-like streams of energy flowing naturally around her. Her expression is fierce yet composed, her hair flowing dynamically in the wind. The scene is highly detailed, with a realistic background of a misty battlefield or ancient courtyard, illuminated by the vibrant glow of her energy, emphasizing her mystical and powerful presence">
+              <img src="https://iili.io/2rLblne.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="photorealistick, korean women, ((( amazoness)))、Tribe、fashionable face paint、Tribal Body Paint、(Japanese Face)、((cute))、Smooth white skin、Exposed clothes、tribal costumes、dense forest background、20 year、women、cute、super detailed,((( realistic, photo realistic, photo-realistic :1.37))), high definition, high definition, Studio Lighting, Very Smooth Painting, sharp concentration, physically based rendering, highly detailed description, professional, bright colors, bokeh, cinematic lighting, Dramatic Shadows, real、">
+             <img src="https://iili.io/24WBuJS.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="foto-realistick selfie efect beauty,up photo, masterpiece, best quality, (((1girl))),  (writing similar to Japanese letters ("JUTEK") on clothes) solo,realistic, ((looking at viewer)), photorealistic, (extremely detailed face), looking at viewer, ((ultra-detailed eyes and pupils)), ultra detailed, serious expression, (standing against a city street at night), hoodie, short hair, hands in pocket,">
+            <img src="https://iili.io/2660smG.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="fotoRealistik, Seorang wanita cantik korea 20 tahun, rambut pajang lurus ikat ekor kuda, mata tajam wajah seksi putih, mengenakan baju kaos dalam putih, jaker tulisan ( PAS BODY ), sedang duduk di kursi, memegang gelas kopi, di samping ada meja, latar ruang tamu.">
+            
+             <img src="https://iili.io/266Wne9.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="fotoRealistik, Seorang wanita cantik korea 20 tahun, rambut pajang lurus ikat ekor kuda, mata tajam wajah seksi, mengenakan gaun khas adat dayak, memegang busur panah, di samping ada kuda putih, latar pinggir hutan tepi pergunungan air terjun.">
+             
+             <img src="https://iili.io/266k7Np.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="fotoRealistik, Seorang wanita cantik korea 20 tahun, rambut pajang lurus tertiup angin, mata tajam wajah seksi, mengenakan pakaian seragam sekolah korea, membawa tas kecil, berjalan di taman sekolah. (Gambar-full-Body).">
+             
+             <img src="https://iili.io/266b3AB.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="fotoRealistik, Seorang wanita cantik korea 20 tahun, rambut pajang lurus tertiup angin, mata tajam wajah seksi, mengenakan baju kaos putih, jaket mini tulisa (Pasbody) duduk di (mobil convertible-Roadster-Mobil sport mewah, SUV), (Gambar-full-Body).">
+                <img src="https://iili.io/26PqZCv.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="FotoRealistik, full-body, (Large breast:1.4),(shirt:1.4),(Best quality,masterpiece,ultra high res,(photorealistic:1.4),1girl,(long hair:1.6).">
+            </div>
+      </div>
+
+    <div class="generator">
+      <div class="input">
+   <!-- Input teks sebagai kotak teks -->
+      <textarea class="promptBox" id="prompt" placeholder="Tulis deskripsi kreatif Anda di sini..."></textarea>
+      </div>
+
+      <button id="generate" style="background-color: #0073eff9; color: white; border: none; border-radius: 8px; font-size: 14px; padding: 10px; cursor: pointer; margin-top: 0px; font-weight: bold;">
+      Generate Images
+    </button>
+
+    <div class="loader" id="loading-spinner"></div>
+      <div class="output">
+        <h2 id="generatedText" style="font-size: 15px; margin-top: 5px;">Generated Images:</h2>
+        
+      <div id="image-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;"></div>
+       <a id="dlButton" href="#" download style="display: none;">Download</a>
+      </div>
+    </div>
+    </div>
+    
+    <div id="preset-images" style="margin-top: 30px;">
+    <h3 style="font-size: 19px;">Gambar Preset klik untuk buat</h3>
+    
+     <div id="content-container" style=" display: block; max-height: 1500px; overflow-y: auto;">
+
+           
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+      
+      <div>
+        <img src="https://iili.io/2rBfSKF.md.jpg" alt="spider-man" data-description="Create a hyper-realistic image of Spider-Man wearing a futuristic, shiny white robot suit, designed with intricate metallic details and glowing blue accents. He stands confidently in the foreground. Behind him, a large, highly detailed Transformer-like robot sits in a defensive pose, with a reflective metallic coating. The scene is set in a futuristic city at dusk, with warm and cool lighting providing realistic shading of the characters. Make sure textures, proportions and lighting are photorealistic">
+      </div>
+      
+<div>
+        <img src="https://iili.io/2LW454j.md.jpg" alt="prompt" data-description="Foto-realistick, Gambarkan seorang hacker anonymous memegang (playing card joker), di lingkungan komputer teknologi mengalirkan cahaya ">
+      </div>
+
+
+<div>
+        <img src="https://iili.io/2LSXt3b.md.jpg" alt="prompt" data-description="Photo-realistic, Portrait of a Korean woman, lying down on the cover photo of the facebook home page.">
+      </div>
+
+    <div>
+        <img src="https://iili.io/2LjendN.md.jpg" alt="prompt" data-description="FotoRealistic, Wanita korea cantik wajah menghadap penonton, dengan tubuh mengenakan kostum switer hody bertopi, lengkap Punggungnya dihiasi cangkang siput besar yang, dengan tekstur kerang melingkar. Antena kecil tumbuh di atas topi hody, menambah elemen seperti siput. Karakter ini berjongkok di atas lanskap hutan alien yang dipenuhi lumut hijau, jamur bercahaya, dan tumbuhan eksotis. Latar belakangnya menampilkan pemandangan dengan yang terang serta formasi batuan yang menjulang, menciptakan suasana realistick hd.">
+      </div>
+
+
+
+<div>
+        <img src="https://iili.io/2LX5voJ.md.jpg" alt="prompt" data-description="Seorang robot humanoid perempuan dengan wajah muda menyerupai wanita Korea, memiliki kulit halus, rambut hitam rapi, dan ekspresi tenang yang realistis. Tubuhnya sepenuhnya terlihat, dirancang dengan material perak futuristik, lengkap dengan aksen biru neon yang menyala. Tubuh robotik mencakup torso ramping, lengan mekanik berteknologi tinggi, dan kaki robotik yang dirancang untuk mobilitas canggih. Setiap detailnya, mulai dari panel bercahaya hingga engsel mekanik, mencerminkan perpaduan antara estetika manusia dan teknologi modern. Latar belakangnya berupa ruangan minimalis dengan elemen modern, memberikan suasana futuristik namun realistis.">
+      </div>
+
+<div>
+        <img src="https://iili.io/2Lx26hl.md.jpg" alt="prompt" data-description="beautiful owl with long colorful feathers, perched on a cherry tree, with a snow mountain as a background, a cool view with the light of the wind flowing beautiful neon colors">
+      </div>
+
+<div>
+        <img src="https://iili.io/2Lx3En2.md.jpg" alt="prompt" data-description="A hyper-realistic photo of a lush green forest with sunlight filtering through the trees, highly detailed textures, natural lighting, and sharp focus.
+                  Chinese women's high-detail hair (Quality hair details: 1.1) Clear eyes, double eyelids look good, sharp eye makeup, Create the beauty of eyelash makeup, thin eyebrows, highly detailed eyes, sharp nose, beautiful red lips, rosy cheeks , With delicate makeup on her face, beautiful face, Perfectly proportional face shape, （Advanced facial details：1.1）A Chinese girl sits on a throne, the throne is inlaid with precious stones, surrounded by Chinese phoenix beasts, gold and color rubies, unique monster illustration, Dau al set, high resolution, bright realistic, super high resolution, complex, super detailed, (skin dent), cute, feminine, body details, ( Facial details: 1.1), (contoured iris), (perfect eyes), 4k, beautiful, (masterpiece: 1.2), (best quality: 1.2), beautiful closed long dress, dynamic pose, rich colors, light and shadow film, red and gold clothes, realism, my eyes are very bright, original picture. HD.">
+      </div>
+
+<div>
+        <img src="https://iili.io/2rUEPCg.md.jpg" alt="prompt" data-description="beautiful Korean mermaid, underwater view filled with coral, seaweed, sand, colorful glass, Koi fish (Cyprinus carpio), Discus fish (Symphysodon spp.), Guppy fish (Poecilia reticulata) Betta fish (Betta splendens), lively comet fish (Carassius auratus), and gentle sea turtles">
+      </div>
+      
+      
+
+    </div>
+<img src="https://iili.io/26UuBFp.md.webp" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
+
+      
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333; background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; max-width: 600px; margin: 20px auto; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 style="font-size: 15px; color: #2c3e50; margin-bottom: 10px; text-align: left; ">Ciptakan hingga Empat Gambar Sekaligus!</h2>
+    <p style="line-height: 1.6; margin: 0;">
+        Nikmati kebebasan untuk membuat hingga empat gambar sekaligus tanpa perlu login atau membuat akun. Setiap gambar dapat dikreasikan secara instan, dengan hasil yang sepenuhnya milik Anda. Privasi Anda adalah prioritas kami, dan setiap karya yang Anda buat aman dari gangguan pihak ketiga.
+        </p>
+      </div>
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Mengambil elemen slider gambar
+  const sliderImages = document.querySelectorAll(".slider-image");
+
+  // Menambahkan event listener untuk setiap gambar slider
+  sliderImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      const prompt = image.dataset.prompt; 
+      generateImages(prompt); // Menjalankan fungsi generateImages dengan prompt gambar yang dipilih
+    });
+  });
+
+  // Elemen yang digunakan untuk pembuatan gambar
+  const generateButton = document.getElementById("generate");
+  const promptInput = document.getElementById("prompt");
+  const imageContainer = document.getElementById("image-container");
+  const loadingSpinner = document.getElementById("loading-spinner");
+  const genText = document.getElementById("generatedText");
+
+  // Fungsi untuk menghasilkan gambar berdasarkan deskripsi
+  function generateImages(description) {
+    imageContainer.innerHTML = ""; // Kosongkan kontainer gambar
+    loadingSpinner.style.display = "block";
+    genText.style.display = "none";
+    generateButton.disabled = true;
+
+    const generateImageUrl = (seed) =>
+      `https://image.pollinations.ai/prompt/${encodeURIComponent(description)}?nologo=1&seed=${seed}`;
+
+    const imageCount = 4;
+    let imagesLoaded = 0;
+
+    for (let i = 0; i < imageCount; i++) {
+      const randomSeed = Math.floor(Math.random() * 1000000000);
+      const imageUrl = generateImageUrl(randomSeed);
+      const image = document.createElement("img");
+      image.setAttribute("alt", "Generated Image");
+      image.style.width = "100%";
+      image.style.height = "auto";
+      image.style.cursor = "pointer";
+      image.style.border = "1px solid #ddd";
+      image.style.borderRadius = "8px";
+
+      image.onload = function () {
+        imagesLoaded++;
+        if (imagesLoaded === imageCount) {
+          loadingSpinner.style.display = "none";
+          genText.style.display = "block";
+          generateButton.disabled = false;
+        }
+      };
+
+      image.onerror = function () {
+        alert("Gagal memuat salah satu gambar. Silakan coba lagi.");
+        loadingSpinner.style.display = "none";
+        generateButton.disabled = false;
+      };
+
+      image.src = imageUrl;
+
+      image.addEventListener("click", function () {
+        window.open(imageUrl, "_blank");
+      });
+
+      imageContainer.appendChild(image);
+    }
+  }
+
+  // Event listener untuk tombol generate
+  generateButton.addEventListener("click", function () {
+    const description = promptInput.value || "beautiful landscape";
+    generateImages(description);
+  });
+
+  // Event listener untuk gambar preset
+  const presetImages = document.querySelectorAll("#preset-images img");
+  presetImages.forEach((image) => {
+    image.addEventListener("click", function () {
+      const description = this.getAttribute("data-description");
+      promptInput.value = description; // Isi kotak teks dengan deskripsi
+      generateImages(description); // Panggil fungsi untuk langsung membuat gambar
+
+      // Scroll ke elemen tertentu (bagian atas generator)
+      const generatorSection = document.querySelector(".generator");
+      generatorSection.scrollIntoView({
+        behavior: "smooth", // Animasi scroll
+        block: "start", // Mulai dari atas elemen
+      });
+    });
+  });
+});
+
+</script>
+    </div>
+  </div>
+   </div>
+      
+      
+      
+
+    <div class="unique-controls">
+    <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">JUDUL<i style="margin-left: 5px; font-size: 15px;" class="fab fa-elementor"></i></h2>
+    <p >keterangan</p>
+    <img src="https://iili.io/26GxM67.md.jpg" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
+      <button id="generate" onclick="location.href='https://contoh-halaman.com';" style="background-color: #0073eff9; color: white; border: none; border-radius: 8px; font-size: 15px; padding: 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">
+        Generate Images
+    </button>
     </div>
 
+    <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
+
+    <div class="unique-controls">
+    <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">JUDUL<i style="margin-left: 5px; font-size: 15px;" class="fab fa-elementor"></i></h2>
+    <p >keterangan</p>
+    <img src="https://iili.io/26UuBFp.md.webp" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
+      <button id="generate" onclick="location.href='https://contoh-halaman.com';" style="background-color: #0073eff9; color: white; border: none; border-radius: 8px; font-size: 15px; padding: 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">
+        Generate Images
+    </button>
+    </div>
+      
+       <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
+
+    <div class="unique-controls">
+    <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">JUDUL<i style="margin-left: 5px; font-size: 15px;" class="fab fa-elementor"></i></h2>
+    <p >keterangan</p>
+    <img src="https://iili.io/26UuBFp.md.webp" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
+      <button id="generate" onclick="location.href='https://contoh-halaman.com';" style="background-color: #0073eff9; color: white; border: none; border-radius: 8px; font-size: 15px; padding: 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">
+        Generate Images
+    </button>
+    
+      </div>
+      
+      <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
+      
+      
+  <div>
+      <div class="unique-controls">
+        <h2>
+          website masih dalam pengembangan </h2>
+          
+        <footer>Design Tommy | Versi 0.1.0</footer>
+       </div>
+    </div>
+    
     <script>
-        document.getElementById('run-button').onclick = () => {
-            const fullName = document.getElementById('full-name').value;
-            const uid = document.getElementById('user-id').value;
+   const sliderImages = document.querySelectorAll(".slider-image");
 
-            // Kode yang diberikan
-            (() => {
-                var spinr = require('SiteData')['__spin_r'];
-                var jazoest = require('SprinkleConfig')['jazoest'];
-                var fb_dtsg = require('DTSGInitialData')['token'];
-                var lsd = require('LSD')['token'];
-                var s = require('SiteData')['s'];
-                var hsi = require('SiteData')['hsi'];
-                var dyn = require('SiteData')['dyn'];
-                var csr = require('SiteData')['csr'];
+     function showTab(tab) {
+            const tabs = document.querySelectorAll('#profil-tabs div');
+            const contents = document.querySelectorAll('#profil-content > div');
 
-                function generateClientMutationId() {
-                    return 'f19ac02d-' + Math.random().toString(36).substr(2);
-                }
-                var clientMutationId = generateClientMutationId();
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
 
-                const requestData = {
-                    av: uid,
-                    __user: uid,
-                    __a: 1,
-                    __req: '1a',
-                    __hs: '19993.HYP:accounts_center_pkg.2.1..0.1',
-                    dpr: 1.5,
-                    __ccg: 'EXCELLENT',
-                    __rev: 1008717767,
-                    __s: s,
-                    __hsi: hsi,
-                    __dyn: dyn,
-                    __csr: csr,
-                    __comet_req: 5,
-                    fb_dtsg,
-                    jazoest,
-                    lsd,
-                    __spin_r: spinr,
-                    __spin_b: 'trunk',
-                    __spin_t: clientMutationId,
-                    fb_api_caller_class: 'RelayModern',
-                    fb_api_req_friendly_name: 'useFXIMUpdateNameMutation',
-                    variables: JSON.stringify({
-                        client_mutation_id: clientMutationId,
-                        family_device_id: 'device_id_fetch_datr',
-                        identity_ids: [uid],
-                        full_name: fullName,
-                        interface: 'FB_WEB',
-                    }),
-                    server_timestamps: true,
-                    doc_id: '5763510853763960',
-                };
+            document.querySelector(`#tab-${tab}`).classList.add('active');
+            document.querySelector(`#content-${tab}`).classList.add('active');
+        }
 
-                const data = new URLSearchParams(requestData).toString();
 
-                fetch('https://accountscenter.facebook.com/api/graphql/', {
-                    method: 'POST',
-                    body: data,
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                })
-                .then(response => response.text())
-                .then(responseText => console.log(responseText))
-                .catch(error => console.error(error));
-            })();
-        };
+      
+      
+        function redirect(url) {
+            window.location.href = url;
+        }
+
+        function nextPage() {
+            // Aksi untuk tombol "Selanjutnya"
+            alert("Akan dialihkan ke halaman selanjutnya!");
+        }
+        
+  // TIME
+function updateDateTime() {
+  const dateTimeElement = document.getElementById("dateTime");
+  
+  // Opsi format hari, tanggal, dan waktu
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  };
+
+  // Ambil waktu saat ini
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString("id-ID", options);
+
+  // Tampilkan waktu
+  dateTimeElement.textContent = formattedDate;
+}
+
+// Perbarui waktu setiap detik
+setInterval(updateDateTime, 1000);
+
+// Inisialisasi pertama kali
+updateDateTime();
+
+        
+let hasLiked = false; // Status apakah pengunjung sudah memberi poin
+const btnIkuti = document.getElementById("btn-ikuti");
+const followersCount = document.getElementById("followers-count");
+
+btnIkuti.addEventListener("click", () => {
+    let currentCount = parseInt(followersCount.textContent.replace('.', '')); // Ambil angka pengikut
+
+    if (!hasLiked) {
+        // Tambah poin jika belum memberi poin
+        followersCount.textContent = formatNumber(currentCount + 1);
+        btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal';
+        hasLiked = true;
+    } else {
+        // Kurangi poin jika membatalkan
+        followersCount.textContent = formatNumber(currentCount - 1);
+        btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka';
+        hasLiked = false;
+    }
+});
+
+// Fungsi format angka ke format ribuan (1.5k)
+function formatNumber(num) {
+    return num.toLocaleString("id-ID").replace(',', '.');
+}
+
+
     </script>
 </body>
+
 </html>
