@@ -113,7 +113,7 @@
 
  footer {
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 15px;
   color: gray;
   transition: color 0.3s ease;
         }
@@ -123,7 +123,7 @@
       }
             
  h2 {
-  font-size: 12px;
+  font-size: 15px;
   color: #333333;
   gap: 0px;
   margin-top: 10px;
@@ -171,7 +171,7 @@
   #profil-detail i {
    margin-right: 8px;
    color: #333;
-  font-size: 15px;
+
     }
         
   #scroll-buttons button {
@@ -179,8 +179,9 @@
     align-items: center;
     margin-right: 10px;
     padding: 8px 12px;
+    font-size: 15px;
     background-color: #edeeef;
-    color: #333;
+    color: #6d6262;
     font-weight: bold;
     border: none;
     border-radius: 50px;
@@ -224,7 +225,15 @@
   #profil-content > div.active {
     display: block;
         }
-
+        
+    #content-foto img {
+    width: 200px; /* Atur lebar */
+    height: auto; /* Biarkan tinggi menyesuaikan */
+    border-radius: 8px; /* Opsional: sudut membulat */
+    border: 1px solid #ddd; /* Opsional: border tipis */
+    }
+      
+    
   #profil-detail {
     display: flex;
     align-items: center;
@@ -487,43 +496,41 @@
         </div>
      <div id="scroll-buttons">
     <button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')">
-        <i class="fab fa-gg-circle"></i>&nbsp;AI creativity
+        <i style="font-size: 15px;" class="fab fa-gg-circle"></i>&nbsp;AI creativity
        </button>
             <button onclick="redirect('https://tommydev27.github.io/Keyboardtmdev/')">
-                <i style="font-size: 12px; "class="fas fa-keyboard">&nbsp;</i>Keyboard 
+                <i style="font-size: 15px;" class="fas fa-keyboard">&nbsp;</i>Keyboard 
             </button>
 
        <button onclick="redirect('https://tommydev27.github.io/tommy.website3/')">
-                <i style="font-size: 12px; "class="fas fa-id-card-alt">&nbsp;</i>Ascii ART
+                <i style="font-size: 13px; "class="fas fa-id-card-alt">&nbsp;</i>ASCII ART
             </button>
        <button onclick="redirect('https://tommydev27.github.io/tommy.website-demo/')">
-                <i style="font-size: 12px; "class="fa fa-info-circle">&nbsp;</i>Info Website
+                <i style="font-size: 15px; "class="fa fa-info-circle">&nbsp;</i>Info Website
             </button>
           </div>
        </div>
      </div>
         
-    <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%;display: flex; padding: 4px; margin-top: 10px;">
+    <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; padding: 4px; margin-top: 10px;">
         
     <div id="profil-tabs">
-        <div id="tab-postingan" class="active" onclick="showTab('postingan')">Postingan</div>
-     <div id="tab-tentang" onclick="showTab('tentang')">Tentang</div>
-        
-      <div id="tab-foto" onclick="showFoto()">Foto</div>
-      <div id="foto-content" style="display: none;">
-      <img src="https://iili.io/2QfgJs4..jpg" alt="Foto">
-      </div>
-        </div>
-    
-      <div id="profil-content">
-        <div id="content-postingan" class="active">
-        </div>
-        <div id="content-tentang">
-            <p><i style=" font-size: 16px; "class="fab fa-creative-commons-by">&nbsp;Design Tommy Developer | version 0.1.0</p></i>
-        </div>
-     <div id="content-foto">
-            <p>Galeri foto pengguna.</p>
-        </div>
+    <div id="tab-postingan" class="active" onclick="showTab('postingan')">Postingan</div>
+    <div id="tab-tentang" onclick="showTab('tentang')">Tentang</div>
+    <div id="tab-foto" onclick="showTab('foto')">Foto</div>
+    </div>
+
+    <div id="profil-content">
+    <div id="content-postingan" class="active">
+        <p>Konten Postingan.</p>
+    </div>
+    <div id="content-tentang">
+        <p><i class="fab fa-creative-commons-by"></i> Design Tommy Developer | version 0.1.0</p>
+    </div>
+    <div id="content-foto">
+        <p>Galeri foto pengguna.</p>
+        <img src="https://iili.io/2QfgJs4.jpg" alt="Foto">
+    </div>
      </div>
             
     <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;">
@@ -693,100 +700,10 @@
     <p style="line-height: 1.6; margin: 0;">
         Nikmati kebebasan untuk membuat hingga empat gambar sekaligus tanpa perlu login atau membuat akun. Setiap gambar dapat dikreasikan secara instan, dengan hasil yang sepenuhnya milik Anda. Privasi Anda adalah prioritas kami, dan setiap karya yang Anda buat aman dari gangguan pihak ketiga.
         </p>
+        </div>
       </div>
     </div>
-    
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const sliderImages = document.querySelectorAll(".slider-image");
-
-  sliderImages.forEach((image) => {
-    image.addEventListener("click", () => {
-      const prompt = image.dataset.prompt; 
-      generateImages(prompt); 
-    });
-  });
-
-  const generateButton = document.getElementById("generate");
-  const promptInput = document.getElementById("prompt");
-  const imageContainer = document.getElementById("image-container");
-  const loadingSpinner = document.getElementById("loading-spinner");
-  const genText = document.getElementById("generatedText");
-
-  function generateImages(description) {
-    imageContainer.innerHTML = ""; // Kosongkan kontainer gambar
-    loadingSpinner.style.display = "block";
-    genText.style.display = "none";
-    generateButton.disabled = true;
-
-    const generateImageUrl = (seed) =>
-      `https://image.pollinations.ai/prompt/${encodeURIComponent(description)}?nologo=1&seed=${seed}`;
-
-    const imageCount = 4;
-    let imagesLoaded = 0;
-
-    for (let i = 0; i < imageCount; i++) {
-      const randomSeed = Math.floor(Math.random() * 1000000000);
-      const imageUrl = generateImageUrl(randomSeed);
-      const image = document.createElement("img");
-      image.setAttribute("alt", "Generated Image");
-      image.style.width = "100%";
-      image.style.height = "auto";
-      image.style.cursor = "pointer";
-      image.style.border = "1px solid #ddd";
-      image.style.borderRadius = "8px";
-
-      image.onload = function () {
-        imagesLoaded++;
-        if (imagesLoaded === imageCount) {
-          loadingSpinner.style.display = "none";
-          genText.style.display = "block";
-          generateButton.disabled = false;
-        }
-      };
-
-      image.onerror = function () {
-        alert("Gagal memuat salah satu gambar. Silakan coba lagi.");
-        loadingSpinner.style.display = "none";
-        generateButton.disabled = false;
-      };
-
-      image.src = imageUrl;
-
-      image.addEventListener("click", function () {
-        window.open(imageUrl, "_blank");
-      });
-
-      imageContainer.appendChild(image);
-    }
-  }
-
-  generateButton.addEventListener("click", function () {
-    const description = promptInput.value || "beautiful landscape";
-    generateImages(description);
-  });
-
-  const presetImages = document.querySelectorAll("#preset-images img");
-  presetImages.forEach((image) => {
-    image.addEventListener("click", function () {
-      const description = this.getAttribute("data-description");
-      promptInput.value = description; 
-      generateImages(description); 
-
-      // Bagian atas generator
-      const generatorSection = document.querySelector(".generator");
-      generatorSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
-  });
-});
-</script>
-
-    </div>
-       </div>
+  </div>
    </div>
     
     <div class="unique-controls">
@@ -831,89 +748,176 @@ document.addEventListener("DOMContentLoaded", function () {
           <footer>Design Tommy | Versi 0.1.0</footer>
          </div>
       </div>
+      
+<script>
+  function showTab(tab) {
+    const tabs = document.querySelectorAll("#profil-tabs div");
+    const contents = document.querySelectorAll("#profil-content > div");
+
+    tabs.forEach(t => t.classList.remove("active"));
+    contents.forEach(c => c.classList.remove("active"));
+
+    document.querySelector(`#tab-${tab}`).classList.add("active");
+    document.querySelector(`#content-${tab}`).classList.add("active");
+    }
+  </script>
   
-    <script>
-   const sliderImages = document.querySelectorAll(".slider-image");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const sliderImages = document.querySelectorAll(".slider-image");
 
-     function showTab(tab) {
-        const tabs = document.querySelectorAll('#profil-tabs div');
-       const contents = document.querySelectorAll('#profil-content > div');
+    sliderImages.forEach((image) => {
+        image.addEventListener("click", () => {
+            const prompt = image.dataset.prompt;
+            generateImages(prompt);
+        });
+    });
 
-      tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
+    const generateButton = document.getElementById("generate");
+    const promptInput = document.getElementById("prompt");
+    const imageContainer = document.getElementById("image-container");
+    const loadingSpinner = document.getElementById("loading-spinner");
+    const genText = document.getElementById("generatedText");
 
-      document.querySelector(`#tab-${tab}`).classList.add('active');
-            document.querySelector(`#content-${tab}`).classList.add('active');
+    function generateImages(description) {
+        imageContainer.innerHTML = "";
+        loadingSpinner.style.display = "block";
+        genText.style.display = "none";
+        generateButton.disabled = true;
+
+        const generateImageUrl = (seed) =>
+            `https://image.pollinations.ai/prompt/${encodeURIComponent(description)}?nologo=1&seed=${seed}`;
+
+        const imageCount = 4;
+        let imagesLoaded = 0;
+
+        for (let i = 0; i < imageCount; i++) {
+            const randomSeed = Math.floor(Math.random() * 1000000000);
+            const imageUrl = generateImageUrl(randomSeed);
+            const image = document.createElement("img");
+            image.setAttribute("alt", "Generated Image");
+            image.style.width = "100%";
+            image.style.height = "auto";
+            image.style.cursor = "pointer";
+            image.style.border = "1px solid #ddd";
+            image.style.borderRadius = "8px";
+
+            image.onload = function () {
+                imagesLoaded++;
+                if (imagesLoaded === imageCount) {
+                    loadingSpinner.style.display = "none";
+                    genText.style.display = "block";
+                    generateButton.disabled = false;
+                }
+            };
+
+            image.onerror = function () {
+                alert("Gagal memuat salah satu gambar. Silakan coba lagi.");
+                loadingSpinner.style.display = "none";
+                generateButton.disabled = false;
+            };
+
+            image.src = imageUrl;
+
+            image.addEventListener("click", function () {
+                window.open(imageUrl, "_blank");
+            });
+
+            imageContainer.appendChild(image);
         }
+    }
 
-       function redirect(url) {
-            window.location.href = url;
-        }
+    generateButton.addEventListener("click", function () {
+        const description = promptInput.value || "beautiful landscape";
+        generateImages(description);
+    });
 
-       function nextPage() {
-            // Aksi untuk tombol "Selanjutnya"
-            alert("Akan dialihkan ke halaman selanjutnya!");
-              }
-        
-  // TIME
-      function updateDateTime() {
-      const dateTimeElement = document.getElementById("dateTime");
-  
-    // Opsi format hari, tanggal, dan waktu
-      const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: false
-      };
+    const presetImages = document.querySelectorAll("#preset-images img");
+    presetImages.forEach((image) => {
+        image.addEventListener("click", function () {
+            const description = this.getAttribute("data-description");
+            promptInput.value = description;
+            generateImages(description);
 
-    // Ambil waktu saat ini
-     const now = new Date();
-     const formattedDate = now.toLocaleDateString("id-ID", options);
+            const generatorSection = document.querySelector(".generator");
+            generatorSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        });
+    });
+});
+</script>
 
-    // Tampilkan waktu
-    dateTimeElement.textContent = formattedDate;
-      }
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function showTab(tab) {
+        const tabs = document.querySelectorAll("#profil-tabs div");
+        const contents = document.querySelectorAll("#profil-content > div");
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+        document.querySelector(`#tab-${tab}`).classList.add("active");
+        document.querySelector(`#content-${tab}`).classList.add("active");
+    }
 
-    // Perbarui waktu setiap detik
+    function redirect(url) {
+        window.location.href = url;
+    }
+
+    function nextPage() {
+        alert("Akan dialihkan ke halaman selanjutnya!");
+    }
+
+    function updateDateTime() {
+        const dateTimeElement = document.getElementById("dateTime");
+        if (!dateTimeElement) return;
+        const options = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        };
+        dateTimeElement.textContent = new Date().toLocaleDateString("id-ID", options);
+    }
+
     setInterval(updateDateTime, 1000);
-
-    // Inisialisasi pertama kali
     updateDateTime();
 
-        
-      let hasLiked = false; // Status apakah pengunjung sudah memberi poin
-      const btnIkuti = document.getElementById("btn-ikuti");
-      const followersCount = document.getElementById("followers-count");
+    let hasLiked = false;
+    const btnIkuti = document.getElementById("btn-ikuti");
+    const followersCount = document.getElementById("followers-count");
 
-      btnIkuti.addEventListener("click", () => {
-      let currentCount = parseInt(followersCount.textContent.replace('.', '')); 
-
-       if (!hasLiked) {
-        // Tambah poin jika belum memberi poin
-        followersCount.textContent = formatNumber(currentCount + 1);
-        btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal';
-        hasLiked = true;
-          } else {
-        // Kurangi poin jika membatalkan
-        followersCount.textContent = formatNumber(currentCount - 1);
-        btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka';
-        hasLiked = false;
-          }
+    if (btnIkuti && followersCount) {
+        btnIkuti.addEventListener("click", () => {
+            let currentCount = parseInt(followersCount.textContent.replace('.', ''));
+            if (!hasLiked) {
+                followersCount.textContent = formatNumber(currentCount + 1);
+                btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal';
+                hasLiked = true;
+            } else {
+                followersCount.textContent = formatNumber(currentCount - 1);
+                btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka';
+                hasLiked = false;
+            }
         });
+    }
 
-    // Fungsi format angka ke format ribuan (1.5k)
-        function formatNumber(num) {
-         return num.toLocaleString("id-ID").replace(',', '.');
-          }
-          
-          
-          
+    function formatNumber(num) {
+        return num.toLocaleString("id-ID");
+    }
 
-    </body>
+    document.querySelectorAll("#scroll-buttons button").forEach(button => {
+        button.addEventListener("click", function () {
+            const url = this.getAttribute("onclick").match(/'(.*?)'/)[1];
+            redirect(url);
+        });
+    });
+});
+</script>
 
-  </html>
+</body>
+</html>
