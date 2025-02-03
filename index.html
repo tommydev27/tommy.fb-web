@@ -442,7 +442,7 @@
     
     .slider-image {
         width: 100px;
-        height: 200px;
+        height: 150px;
         object-fit: cover;
         border-radius: 5px;
         cursor: pointer;
@@ -582,7 +582,90 @@ body.dark-mode hr {
     }
     
 
+        .icon-container {
+            position: relative;
+            width: 33px;
+            height: 33px;
+            background-color: #0073eff9;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            }
+        
+        .icon-container {
+    -webkit-tap-highlight-color: transparent; /* Menghapus efek highlight pada perangkat iOS dan Android */
+}
+.icon-container:active::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 255, 0.6); /* Biru yang lebih jelas */
+    border-radius: 50%;
+    animation: ripple 0.3s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+        .icon-container i {
+            font-size: 16px;
+        }
+
+        .button-circle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #0073eff9;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .button-circle i {
+            font-size: 18px;
+        }
+
+        /* Posisi tombol saat aktif */
+        .icon-container.active .button-circle {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Posisi tombol dalam setengah lingkaran di sebelah kiri */
+        .button-circle:nth-child(2) { transform: translate(-30px, -50px); } /* Kiri atas */
+        .button-circle:nth-child(3) { transform: translate(-55px, -20px); } /* Kiri atas tengah */
+        .button-circle:nth-child(4) { transform: translate(-55px, 20px); }  /* Kiri bawah tengah */
+        .button-circle:nth-child(5) { transform: translate(10px, -55px); }  /* Kiri bawah */
+
+        /* Ketika tidak aktif, tombol kembali ke posisi tengah */
+        .icon-container:not(.active) .button-circle {
+            transform: translate(0, 0);
+        }
 </style>
+
   </head>
     <body>
       <div class="container" >
@@ -631,18 +714,26 @@ body.dark-mode hr {
       <div class="toggle-circle"></div>
       <p class="darkmode-label">mode</p>
     </div>
-
-    <div id="profil-container">
+    
+    <div id="container">
      <div id="profil-header">
-      <button id="btn-ikuti" style="background-color: #0073eff9;">
-    <i class="fas fa-thumbs-up"></i> Suka
+      <button id="btn-ikuti" style="background-color: #0073eff9; font-size: 16px;">
+    <i class="fas fa-thumbs-up "></i>  Suka
       </button>
 
-    <button id="btn-pesan" style="color: #333; font-size: 17px;" onclick="window.location.href='https://m.me/tommy27110';">
+    <button id="btn-pesan" style="color: #333; font-size: 16px; width: 210px; " onclick="window.location.href='https://m.me/tommy27110';">
     <i class="fab fa-facebook-messenger"></i> Message
       </button>
-     </div>
         
+        
+<div class="icon-container" id="iconuniquecontainer">
+    <i class="fab fa-whmcs"></i>
+    <div class="button-circle" onclick="window.location.href='home.html';"><i class="fab fa-whatsapp"></i></div>
+    <div class="button-circle" onclick="window.location.href='profile.html';"><i class="fab fa-facebook"></i></div>
+    <div class="button-circle" onclick="window.location.href='settings.html';"><i class="fab fa-instagram"></i></div>
+    <div class="button-circle" onclick="window.location.href='contact.html';"><i class="fas fa-heart"></i></div>
+</div>
+             </div>
         
      <div id="scroll-buttons">
     <button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')">
@@ -704,8 +795,8 @@ body.dark-mode hr {
      <div id="content-container">
 
       <section id="Ai" class="content">
-          <h1>Hasilkan Gambar</h1>
-            <p>Hasilkan gambar unik dengan prompt sederhana. hasil empat gambar.</p>
+          <h1>Hasilkan Gambar Ai dengan prompt description (free limit / ... ).</h1>
+            <p>Bila batas penggunaan telah tercapai. Silakan tunggu hingga limit direset dan coba lagi nanti...</p>
 
     <div class="unique-container">
     <div class="image-slider-container">
@@ -758,10 +849,10 @@ body.dark-mode hr {
     <div id="preset-images" style="margin-top: 30px;">
     <h3 style="font-size: 19px;">Gambar Preset klik untuk buat</h3>
     
-     <div id="content-container" style=" display: block; max-height: 1500px; overflow-y: auto;">
+     <div id="container" style=" display: block; max-height: 300px; overflow-y: auto;">
            
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-      
+
       <div>
         <img src="https://iili.io/2rBfSKF.md.jpg" alt="spider-man" data-description="Create a hyper-realistic image of Spider-Man wearing a futuristic, shiny white robot suit, designed with intricate metallic details and glowing blue accents. He stands confidently in the foreground. Behind him, a large, highly detailed Transformer-like robot sits in a defensive pose, with a reflective metallic coating. The scene is set in a futuristic city at dusk, with warm and cool lighting providing realistic shading of the characters. Make sure textures, proportions and lighting are photorealistic">
       </div>
@@ -845,7 +936,7 @@ body.dark-mode hr {
       
    </div>
    
-    <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333; background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; max-width: 600px; margin: 20px auto; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333; background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 20px auto; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
     <h2 style="font-size: 15px; color: #2c3e50; margin-bottom: 10px; text-align: left; ">Ciptakan hingga Empat Gambar Sekaligus!</h2>
     <p style="line-height: 1.6; margin: 0;">
         Nikmati kebebasan untuk membuat hingga empat gambar sekaligus tanpa perlu login atau membuat akun. Setiap gambar dapat dikreasikan secara instan, dengan hasil yang sepenuhnya milik Anda. Privasi Anda adalah prioritas kami, dan setiap karya yang Anda buat aman dari gangguan pihak ketiga.
@@ -855,7 +946,7 @@ body.dark-mode hr {
     </div>
   </div>
    </div>
-    
+        <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
     <div class="unique-controls">
       <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">Pembuatan gambar Selengkapnya<i style="margin-left: 5px; font-size: 15px;" class="far fa-image"></i></h2>
       <p >Ciptakan kreativitas gambar dengan prompt pastikan jelas lebih terbaca</p>
@@ -938,7 +1029,7 @@ body.dark-mode hr {
         const generateImageUrl = (seed) =>
             `https://image.pollinations.ai/prompt/${encodeURIComponent(description)}?nologo=1&seed=${seed}`;
 
-        const imageCount = 4;
+        const imageCount = 2;
         let imagesLoaded = 0;
 
         for (let i = 0; i < imageCount; i++) {
@@ -1076,6 +1167,10 @@ toggle.addEventListener("click", function () {
   document.body.classList.toggle("dark-mode");
 });
 </script>
-
+<script>
+    document.getElementById("iconuniquecontainer").addEventListener("click", function () {
+        this.classList.toggle("active");
+    });
+</script>
 </body>
 </html>
