@@ -185,6 +185,11 @@ background-color: #d2d4d5;
   -webkit-tap-highlight-color: transparent; /* Menghapus efek highlight pada perangkat iOS dan Android */
 }
 
+body.dark-mode #scroll-buttons i {
+    color: #ff0303;
+}
+
+
 #scroll-buttons i {
   display: flex;
   justify-content: center;
@@ -222,8 +227,13 @@ background-color: #d2d4d5;
   color: #333;
 }
 
+body.dark-mode #scroll-buttons span{
+    color: #0fff03;
+}
 
-
+body.dark-mode h2 {
+    color: #0fff03;
+}
 
 
 
@@ -722,13 +732,17 @@ font-size: 12px;
 margin-top: 5px;
 color: #333;
 }
+body.dark-mode .nav-button span {
+    color: #30ff3b;
+}
+
 .nav-button {
 -webkit-tap-highlight-color: transparent;
 /* Menghapus efek highlight pada perangkat iOS dan Android */
 }
 
 
-body.dark-mode .nav-button span {
+body.dark-mode .nav-button i {
     color: #fff;
 }
 
@@ -973,8 +987,15 @@ iframe {
         font-size: 13px;
     }
 
-
-
+    p {
+      color: #333;
+      font-size: 13px;
+      }
+      
+    .dark-mode p {
+      color: #34ff00 ;
+      }
+    
 </style>
 
 </head>
@@ -1171,8 +1192,7 @@ Secret Prompt<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #
 
   <div class="unique-image-container">
     
-  <h2 style=" color: #333; 
-        font-size: 16px; margin-top: 0px; margin-left: 9px;">
+  <h2 style=" font-size: 16px; margin-top: 0px; margin-left: 9px;">
         Tulis prompt / Description
       </h2>
       
@@ -1189,6 +1209,7 @@ Secret Prompt<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #
 
     <div class="unique-image-container">  <h3 style=" font-size: 15px;       color: #028e33f9; font-size:      16px; margin-top: -12px;">
         Image displayed <i style="margin-left: 0px; font-size: 14px; color: #028e33f9; " class="fab fa-earlybirds"></i> 
+        <p> cara simpan hasil gambar tekan 2 detik klik download</p>
       </h3>
        
      <img id="uniqueGeneratedImage" class="unique-generated-image" alt="">
