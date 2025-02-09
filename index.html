@@ -156,10 +156,9 @@ padding: 10px 15px;
 font-weight: bold;
 border: none;
 width: 100%;
+padding: 8px;
 border-radius: 7px;
 cursor: pointer;
-
-
 }
 
 #profil-header button:hover {
@@ -168,10 +167,11 @@ background-color: #d2d4d5;
 
 #scroll-buttons {
   display: flex;
-  gap: 5px;
+  gap: 0px;
+  padding: 10px;
   width: 100%;
   justify-content: space-between;
-}
+  }
 
 #scroll-buttons button {
   display: flex;
@@ -189,11 +189,11 @@ background-color: #d2d4d5;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 40px;
   height: 30px;
   background-color: #e6e7e7;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 16px;
   color: #333;
   transition: background-color 0.3s ease;
 }
@@ -218,7 +218,7 @@ background-color: #d2d4d5;
 
 #scroll-buttons button span {
   font-size: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
   color: #333;
 }
 
@@ -427,7 +427,7 @@ border-radius: 8px;
 .image-slider {
 display: flex;
 gap: 10px;
-margin-top: -10px;
+margin-top: 0px;
 }
 
 .slider-image {
@@ -696,7 +696,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-
 padding: 10px 10px;
 margin-top: 0px;
 cursor: pointer;
@@ -730,26 +729,34 @@ color: #333;
 
 
 body.dark-mode .nav-button span {
-color: #fff;
+    color: #fff;
 }
 
-.nav-button i {
-  display: inline-block;
-  transition: background-color 0.3s ease;
+.nav-button:hover i {
+    background-color: transparent;
+    border-radius: 50px;
+    color: #c10303;
 }
 
 .nav-button:active i {
-  animation: blink 1.1s;
+    background-color: transparent !important;
+    animation: blink 1.1s;
 }
 
+.nav-button i {
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
 
-
+.nav-button {
+    -webkit-tap-highlight-color: transparent;
+}
 
 iframe {
-    width: 103vw; /* Lebar lebih dari viewport */
-    max-width: none; /* Hilangkan batas maksimum */
+    width: 103vw;
+    max-width: none;
     height: 700px;
-    margin-left: 0; /* Sesuaikan agar tetap di tengah */
+    margin-left: 0;
     border: none;
     margin-top: 0;
     border-radius: 5px;
@@ -759,11 +766,10 @@ iframe {
     transform: translateX(-50%);
 }
 
-
 .iframe-container {
     width: 100%;
-    max-width: 800px; /* Atur sesuai kebutuhan */
-    height: 700px; /* Atur sesuai kebutuhan */
+    max-width: 800px;
+    height: 700px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -777,7 +783,6 @@ iframe {
     height: 100%;
     border: none;
 }
-
 
 
 
@@ -948,6 +953,25 @@ iframe {
 
 
 
+   .unique-image-container {
+        margin-top: 0px;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    img.unique-generated-image {
+        width: 100%;
+        border-radius: 5px;
+        margin: 10px 0;
+        height: 100%;
+        object-fit: cover;
+    }
+    input[type="text"], select, button {
+        padding: 3px;
+        font-size: 13px;
+    }
 
 
 
@@ -1147,58 +1171,64 @@ WhatsApp<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e3
 <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; padding: 2px; margin-top: 10px;">
 
 
-<div class="profile-container">
-<div class="header">
-
-<div class="profile-info">
-<h4>Tommy Website <i style="font-size:17px; margin-left: 0px; "class="fas fa-check-circle"></i></h2> </span></h4>
-<small style="font-size: 12px;">Design Tommy | V0.1.0 • <i style="font-size:12px; margin-left: 0px; color: #898989;"class="fas fa-globe-americas"></i></small>
-</div>
-</div>
 
 
+  <div class="unique-image-container">
 
-<!-- Konten -->
-<div id="content-container">
-
-<section id="Ai" class="content">
-
-<p> Hasilkan Gambar Ai dengan prompt description
-Bila batas jumlah penggunaan telah tercapai. Silakan tunggu hingga limit direset dan coba lagi nanti (free limit / ... )
-</p>
+    <div style="padding: 8px;">
+      <textarea id="uniquePromptInput" class="unique-prompt-input" 
+        style="width: 100%; margin-top: 0px; height: 100px; padding: 5px; 
+        border: 1px solid #d8d8d8e0; border-radius: 5px; font-size: 14px; 
+        resize: none;" 
+        placeholder="Tulis deskripsi kreatif Anda di sini..."></textarea>
+      </div>
 
 
 
 
-<div class="generator">
-<div class="input">
-<!-- Input teks sebagai kotak teks -->
-<textarea class="promptBox" id="prompt" placeholder="Tulis deskripsi kreatif Anda di sini..."></textarea>
-</div>
-
-<button id="generate" style=" color: #333; border: none; border-radius: 8px; font-size: 14px; padding: 8px; cursor: pointer; margin-top: 0px; font-weight: bold;">
-Generate Images<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e33f9;" class="fab fa-gripfire"></i>
-</button>
-
-<div class="loader" id="loading-spinner"></div>
-<div class="output">
-<h2 id="generatedText" style="font-size: 15px; margin-top: 5px;">Hasi gambar disini:</h2>
-
-<div id="image-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;"></div>
-<a id="dlButton" href="#" download style="display: none;">Download</a>
-</div>
+    <div class="unique-image-container">  <h3 style=" font-size: 15px;       color: #028e33f9; font-size:      16px; margin-top: -12px;">
+        Image displayed <i style="margin-left: 0px; font-size: 14px; color: #028e33f9; " class="fab fa-earlybirds"></i> 
+      </h3>
+       
+     <img id="uniqueGeneratedImage" class="unique-generated-image" alt="">
 
 
+  <div id="loader" class="loader"></div>
+      <div class="scroll-container">
+        <div id="loader" class="loader"></div> <!-- Loader tetap di dalam scroll-container -->
+<!-- Tambahkan elemen div ini di HTML untuk menampung teks -->
+<div id="downloadTextContainer" style="display: none; text-align: center; font-size: 14px; font-weight: bold; color: #333; margin-top: 10px;"></div>
+        
+        <!-- Size Controls -->
+              <div>
 
-<div id="preset-images" style="margin-top: 30px;">
-<h3 style="font-size: 15px; margin-bottom:10px;">Gambar Preset klik untuk buat ⇆</h3>
-</div>
+                <select id="uniqueHeightInput" class="unique-height-input" style="font-size: 15px; padding: 5px; border-radius: 19px; font-weight: bold;">
+                    <option value="400">400s</option>
+                    <option value="500">500Px</option>
+                    <option value="600">600Px</option>
+                    <option value="700">700Px</option>
+                    <option value="800">800M</option>
+                </select>
 
-<div class="image-slider-container">
-<div class="image-slider">
 
-<img src="https://iili.io/26PHCYb.md.jpg" alt="Gambar 1" class="slider-image" data-prompt="A hyper-realistic photo of a lush green forest with sunlight filtering through the trees, highly detailed textures, natural lighting, and sharp focus.
-Chinese women's high-detail hair (Quality hair details: 1.1) Clear eyes, double eyelids look good, sharp eye makeup, Create the beauty of eyelash makeup, thin eyebrows, highly detailed eyes, sharp nose, beautiful red lips, rosy cheeks , With delicate makeup on her face, beautiful face, Perfectly proportional face shape, （Advanced facial details：1.1）A Chinese girl sits on a throne, the throne is inlaid with precious stones, surrounded by Chinese phoenix beasts, gold and color rubies, unique monster illustration, Dau al set, high resolution, bright realistic, super high resolution, complex, super detailed, (skin dent), cute, feminine, body details, ( Facial details: 1.1), (contoured iris), (perfect eyes), 4k, beautiful, (masterpiece: 1.2), (best quality: 1.2), beautiful closed long dress, dynamic pose, rich colors, light and shadow film, red and gold clothes, realism, my eyes are very bright, original picture. HD.">
+      <button id="uniqueGenerateBtn" class="unique-generate-btn" 
+                    style="color: #333; border: none; border-radius: 8px; font-size: 14px; padding: 8px; cursor: pointer; margin-top: 0px; font-weight: bold;">
+                    Generate Images
+                    <i style="margin-left: 5px; font-size: 15px; color: #fc7f2bf9;" class="fab fa-gripfire"></i>
+                </button>
+          </div>
+                <div id="preset-images" style="margin-top: 10px;">
+                    <h3 style="color: #028e33f9; font-size: 15px; margin-bottom: 10px;">
+                        Gambar Preset klik untuk buat ⇆
+                    </h3>
+                </div>
+
+                <div class="image-slider-container">
+                    <div class="image-slider">
+                        <img src="https://iili.io/26PHCYb.md.jpg" 
+                    alt="Gambar 1" class="slider-image"
+                     data-prompt="Chinese women's high-detail hair (Quality hair details: 1.1) Clear eyes, double eyelids look good, sharp eye makeup, Create the beauty of eyelash makeup, thin eyebrows, highly detailed eyes, sharp nose, beautiful red lips, rosy cheeks, With delicate makeup on her face, beautiful face, Perfectly proportional face shape, (Advanced facial details：1.1) A Chinese girl sits on a throne, the throne is inlaid with precious stones, surrounded by Chinese phoenix beasts, gold and color rubies, unique monster illustration, Dau al set, high resolution, bright realistic, super high resolution, complex, super detailed, (skin dent), cute, feminine, body details, (Facial details: 1.1), (contoured iris), (perfect eyes), 4k, beautiful, (masterpiece: 1.2), (best quality: 1.2), beautiful closed long dress, dynamic pose, rich colors, light and shadow film, red and gold clothes, realism, my eyes are very bright, original picture. HD.">
+
 
 <img src="https://iili.io/266R6tS.md.jpg" alt="Gambar 5" class="slider-image" data-prompt="Korean A stunning, elegant fantasy-inspired gown with intricate gold and pearl embellishments, featuring a glowing central design and ethereal details. The dress has a transparent and flowing fabric with ornate patterns, creating a majestic and celestial appearance. Designed to reflect beauty, grace, and sophistication, worn by a regal and radiant figure in a grand setting.">
 
@@ -1267,9 +1297,12 @@ Chinese women's high-detail hair (Quality hair details: 1.1) Clear eyes, double 
 
 <img src="https://iili.io/2Qlw4wb.md.jpg" alt="prompt" class="slider-image" data-prompt="A 3D-rendered Japanese anime-style female samurai removing her mask, pulling it down to reveal her beautiful face. The mask is a traditional samurai mask, primarily white with red and gold accents. She has long, flowing black hair and wears detailed samurai armor with intricate engravings. Her full body is visible as she confidently removes the mask with one hand while holding a katana in the other. The background features a misty traditional Japanese village with soft lighting. The scene has a cinematic feel with dramatic lighting and realistic textures">
 </div>
-</div>
-</div>
-</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
 </div>
 
 <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;">
@@ -1285,6 +1318,92 @@ Ciptakan kreativitas gambar dengan prompt pastikan jelas lebih terbaca
 Open Home<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e33f9;" class="far fa-image"></i>
 </button>
 </div>
+
+
+<script>
+    const promptInput = document.getElementById("uniquePromptInput");
+    const sliderImages = document.querySelectorAll(".slider-image");
+    const generatedImage = document.getElementById("uniqueGeneratedImage");
+    const loader = document.getElementById("loader");
+    const saveBtn = document.getElementById("uniqueSaveBtn");
+    const heightInput = document.getElementById("uniqueHeightInput");
+    const generateBtn = document.getElementById("uniqueGenerateBtn");
+
+    function generateImage(description = null) {
+        const prompt = description || promptInput.value.trim();
+        const height = parseInt(heightInput.value) || 1024;
+        const width = 1024;
+
+        if (!prompt) {
+            alert("Please enter a description for the image.");
+            return;
+        }
+
+        loader.style.display = 'block';
+
+        setTimeout(() => {
+            loader.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+
+        const seed = Math.floor(Math.random() * 1000000);
+        const generateImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?nologo=1&seed=${seed}&width=${width}&height=${height}&quality=100`;
+
+        generatedImage.src = generateImageUrl;
+
+        generatedImage.onload = () => {
+            loader.style.display = 'none';
+            saveBtn.disabled = false;
+            generatedImage.setAttribute("onclick", "saveImage()");
+            generatedImage.style.cursor = "pointer";
+
+            let downloadText = document.getElementById("downloadText");
+            if (!downloadText) {
+                downloadText = document.createElement("p");
+                downloadText.id = "downloadText";
+                generatedImage.parentNode.insertBefore(downloadText, generatedImage.nextSibling);
+            }
+            downloadText.textContent = "Klik gambar untuk download";
+            downloadText.style.textAlign = "center";
+            downloadText.style.fontSize = "14px";
+            downloadText.style.fontWeight = "bold";
+            downloadText.style.color = "#333";
+            downloadText.style.marginTop = "10px";
+            downloadText.style.display = "block";
+
+            setTimeout(() => {
+                generatedImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 200);
+        };
+    }
+
+    function saveImage() {
+        const link = document.createElement('a');
+        link.href = generatedImage.src;
+        link.download = 'generated_image.png';
+        link.click();
+    }
+
+    sliderImages.forEach(image => {
+        image.addEventListener("click", function () {
+            const prompt = this.getAttribute("data-prompt");
+            promptInput.value = prompt;
+            generateImage(prompt);
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    generateBtn.addEventListener("click", () => generateImage());
+    saveBtn.addEventListener("click", saveImage);
+</script>
+
+
+</section>
+
+
 
 
 
@@ -1357,116 +1476,6 @@ document.querySelector(`#content-${tab}`).classList.add("active");
 }
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const sliderImages = document.querySelectorAll(".slider-image");
-
-    sliderImages.forEach((image) => {
-        image.addEventListener("click", () => {
-            const prompt = image.dataset.prompt;
-            generateImages(prompt);
-
-            // Scroll otomatis ke bagian generator gambar slider
-            const generatorSection = document.querySelector(".generator");
-            generatorSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        });
-    });
-
-    const generateButton = document.getElementById("generate");
-    const promptInput = document.getElementById("prompt");
-    const imageContainer = document.getElementById("image-container");
-    const loadingSpinner = document.getElementById("loading-spinner");
-    const genText = document.getElementById("generatedText");
-
-    function generateImages(description) {
-        imageContainer.innerHTML = "";
-        loadingSpinner.style.display = "block";
-        genText.style.display = "none";
-        generateButton.disabled = true;
-
-        const generateImageUrl = (seed) =>
-            `https://image.pollinations.ai/prompt/${encodeURIComponent(description)}?nologo=1&seed=${seed}`;
-
-        const imageCount = 2;
-        let imagesLoaded = 0;
-
-        for (let i = 0; i < imageCount; i++) {
-            const randomSeed = Math.floor(Math.random() * 1000000000);
-            const imageUrl = generateImageUrl(randomSeed);
-            const imageWrapper = document.createElement("div");
-            imageWrapper.style.textAlign = "center";
-            imageWrapper.style.marginBottom = "15px";
-
-            const image = document.createElement("img");
-            image.setAttribute("alt", "Generated Image");
-            image.style.width = "100%";
-            image.style.height = "auto";
-            image.style.cursor = "pointer";
-            image.style.border = "1px solid #ddd";
-            image.style.borderRadius = "8px";
-            image.style.display = "block";
-            image.style.margin = "0 auto";
-
-            const message = document.createElement("p");
-            message.textContent = "Tekan Gambar Klik Download";
-            message.style.color = "#3240ff";
-            message.style.fontWeight = "bold";
-            message.style.marginTop = "10px";
-            message.style.display = "none"; // Sembunyikan dulu sebelum gambar muncul
-
-            image.onload = function () {
-                imagesLoaded++;
-                if (imagesLoaded === imageCount) {
-                    loadingSpinner.style.display = "none";
-                    genText.style.display = "block";
-                    generateButton.disabled = false;
-                }
-                message.style.display = "block"; // Tampilkan teks setelah gambar muncul
-            };
-
-            image.onerror = function () {
-                alert("Gagal memuat salah satu gambar. Silakan coba lagi.");
-                loadingSpinner.style.display = "none";
-                generateButton.disabled = false;
-            };
-
-            image.src = imageUrl;
-
-            image.addEventListener("click", function () {
-                window.open(imageUrl, "_blank");
-            });
-
-            imageWrapper.appendChild(image);
-            imageWrapper.appendChild(message);
-            imageContainer.appendChild(imageWrapper);
-        }
-    }
-
-    generateButton.addEventListener("click", function () {
-        const description = promptInput.value || "beautiful landscape";
-        generateImages(description);
-    });
-
-    const presetImages = document.querySelectorAll("#preset-images img");
-    presetImages.forEach((image) => {
-        image.addEventListener("click", function () {
-            const description = this.getAttribute("data-description");
-            promptInput.value = description;
-            generateImages(description);
-
-            // Scroll otomatis ke bagian generator gambar slider
-            const generatorSection = document.querySelector(".generator");
-            generatorSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        });
-    });
-});
-</script>
 
 
 <script>
