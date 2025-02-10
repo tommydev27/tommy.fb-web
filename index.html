@@ -800,8 +800,6 @@ iframe {
 
 
 
-
-
         .gallery {
             list-style-type: none;
             padding: 0;
@@ -987,15 +985,12 @@ iframe {
         font-size: 13px;
     }
 
-    p {
-      color: #333;
-      font-size: 13px;
-      }
       
     .dark-mode p {
       color: #34ff00 ;
       }
     
+
 </style>
 
 </head>
@@ -1209,7 +1204,6 @@ Secret Prompt<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #
 
     <div class="unique-image-container">  <h3 style=" font-size: 15px;       color: #028e33f9; font-size:      16px; margin-top: -12px;">
         Image displayed <i style="margin-left: 0px; font-size: 14px; color: #028e33f9; " class="fab fa-earlybirds"></i> 
-        <p> cara simpan hasil gambar tekan 2 detik klik download</p>
       </h3>
        
      <img id="uniqueGeneratedImage" class="unique-generated-image" alt="">
@@ -1237,7 +1231,9 @@ Secret Prompt<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #
                     Generate Images
                     <i style="margin-left: 5px; font-size: 15px; color: #fc7f2bf9;" class="fab fa-gripfire"></i>
                 </button>
-          </div>
+                <button id="uniqueSaveBtn" ></button>
+              </div>
+          
                 <div id="preset-images" style="margin-top: 10px;">
                     <h3 style="color: #028e33f9; font-size: 15px; margin-bottom: 10px;">
                         Gambar Preset klik untuk buat ⇆
@@ -1383,13 +1379,15 @@ Open Home<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e
                 downloadText.id = "downloadText";
                 generatedImage.parentNode.insertBefore(downloadText, generatedImage.nextSibling);
             }
-            downloadText.textContent = "Klik gambar untuk download";
+            downloadText.textContent = " Tekan gambar 2 detik klik Download Gambar";
             downloadText.style.textAlign = "center";
             downloadText.style.fontSize = "14px";
             downloadText.style.fontWeight = "bold";
             downloadText.style.color = "#333";
-            downloadText.style.marginTop = "10px";
+            downloadText.style.marginTop = "-5px";
+            downloadText.style.marginBottom= "10px";
             downloadText.style.display = "block";
+
 
             setTimeout(() => {
                 generatedImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
