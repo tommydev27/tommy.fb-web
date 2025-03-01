@@ -1401,8 +1401,14 @@
               </div>
                <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
                
+
+
           <div class="unique-controls">
-<img src="https://iili.io/3JIVm1n.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
+                    <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">Pembuatan Text  Unikers Selengkapnya</h2>
+          <p style="font-size: 12px;">
+          Ciptakan kreasi font symbols Text & glitch text generator  <br> keyboard Unikers Creativity
+          </p>
+<img src="https://iili.io/32RvRNR.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
 
 <div class="tab-container">
     <button class="nav-button" onclick="toggleTab(this, 'Microsoft')">
@@ -1421,6 +1427,10 @@
                             <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
             
           <div class="unique-controls">
+                    <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">Galeri gambar & musik</h2>
+          <p style="font-size: 12px;">
+          koleksi dan hiburan 
+          </p>
             <img src="https://iili.io/3JTb0GV.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
            <div class="tab-container">
                 <button class="nav-button" onclick="toggleTab(this, 'Music')"><span>Music 
@@ -1428,11 +1438,8 @@
                     </span>
                 </button>
                 <iframe class="imageContainer" data-service="Music" style="display:none;"></iframe>
-            </div>
-         </div>
 
-        <div class="unique-controls">
-         <img src="https://iili.io/39gOjOG.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
+         <img src="https://iili.io/39gOjOG.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none; margin-top: 8px;">
            <div class="tab-container">
             <button id="generate" onclick="location.href='https://tommydev27.github.io/Galeri/';" style="color: #333; border-radius: 8px; font-size: 15px; padding: 8px 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">
             Galeri <i style="  margin-left: 5px; font-size: 15px; color: #04a4bbfb; " class="fa fa-image"></i>
@@ -1440,6 +1447,9 @@
 
             </div>
          </div>
+            </div>
+         </div>
+
 
 
 
@@ -1455,8 +1465,8 @@
             
             
             <div class="unique-controls">
-         <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">Selengkapnya Kunjungi bagian Menu Tab</h2>
-            <p style="font-size: 12px;";>Web masih dalam pengembangan</p>
+         <h2 style="font-size: 17px; margin-top: -8px; padding: 0px; ">Menu tambahan </h2>
+            <p style="font-size: 14px;";>website masih dalam tahap pengembangan dan mungkin belum berfungsi secara normal. Beberapa fitur mungkin tidak konsisten atau mengalami gangguan. Kami sedang bekerja untuk meningkatkan pengalaman Anda. Terima kasih atas pengertiannya!</p>
           <div id="scroll-buttons">
           <button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')">
           <i class="fab fa-gg-circle"></i>
@@ -1605,7 +1615,7 @@
             </script>
             
 <script>
-    let isIframeOpen = false; // Status iframe terbuka atau tidak
+    let isIframeOpen = false;
 
     function toggleTab(button, name) {
         const parentDiv = button.closest(".tab-container");
@@ -1615,20 +1625,18 @@
 
         const currentUrl = getUrlForTab(name);
 
-        // Jika iframe terbuka dengan URL yang sama, tutup iframe
         if (iframe.style.display === 'block' && iframe.src === currentUrl) {
             iframe.style.display = 'none';
             isIframeOpen = false;
-            history.pushState(null, null, location.href); // Tambah entri di riwayat agar tombol kembali tetap berfungsi
+            history.pushState(null, null, location.href);
             return;
         }
 
-        // Sembunyikan semua iframe sebelum menampilkan yang baru
         document.querySelectorAll(".tab-container iframe").forEach(el => {
             el.style.display = "none";
         });
 
-        // Jika iframe belum memiliki URL yang benar, ubah src
+
         if (iframe.src !== currentUrl) {
             iframe.src = currentUrl;
         }
@@ -1636,10 +1644,9 @@
         iframe.style.display = 'block';
         isIframeOpen = true;
 
-        // Tambahkan state ke history agar tombol kembali bisa menutup iframe lebih dulu
+
         history.pushState(null, null, location.href);
 
-        // Tunggu sebentar agar tampilan stabil sebelum scrolling
         setTimeout(() => {
             iframe.scrollIntoView({ behavior: "smooth", block: "center" });
         }, 100);
@@ -1657,7 +1664,6 @@
         return urls[name] || '';
     }
 
-    // Menangani tombol "Kembali" bawaan smartphone
     window.addEventListener("popstate", function () {
         if (isIframeOpen) {
             document.querySelectorAll(".tab-container iframe").forEach(el => {
@@ -1670,12 +1676,7 @@
         }
     });
 
-    // Inisialisasi state pertama kali agar tombol kembali berfungsi dengan baik
     history.pushState(null, null, location.href);
 </script>
-
-
-
-
         </body>
     </html>
