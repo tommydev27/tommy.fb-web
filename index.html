@@ -688,26 +688,29 @@
         flex-direction: column;
         align-items: left;
         justify-content: left;
-        padding: 2px 5px;
+        padding: 8px 15px;
         margin-top: 8px;
         cursor: pointer;
         width: auto;
-        /* Lebar tombol disesuaikan */
+        color: #333;
+        border: none;
+        cursor: pointer;
+        margin-top: 5px;
+        font-weight: bold;
         background: #f2f1f1;
-        border: 1px solid gray;
-        border-radius: 3px;
+        border-radius: 10px;
         transition: background-color 0.3s ease;
         }
         
         
       .nav-button i {
         font-size: 14px;
-        color: #00680f;
+        color: #008914d2;
         transition: background-color 0.3s ease;
         }
         
       .nav-button span {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: bold;
         margin-top: 0px;
         color: #333;
@@ -773,23 +776,22 @@
             transform: translateX(-50%);
         }
         
-        .iframe-container {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ccc;
-            overflow: hidden;
-        }
-        
-        #iframe-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+.iframe-container {
+    width: 100%;
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
 
 
@@ -1304,7 +1306,7 @@
         <div class="nav-buttons">
           <div class="tab-container">
               <button class="nav-button" onclick="toggleTab(this, 'DeepAi')"><span>TMG AI
-                  <i class="fab fa-modx"></i>
+                  <i class="fab fa-modx" ></i>
                   </span>
               </button>
               <iframe class="imageContainer" data-service="DeepAi" style="display:none;"></iframe>
@@ -1407,10 +1409,7 @@
         <span>Keyboard <i class="fas fa-keyboard"></i></span>
     </button>
 
-    <iframe id="Microsoft" class="imageContainer" data-service="Microsoft"
-        style="display: none; width: 103vw; max-width: none; height: 600px; margin-left: 0; 
-        border: none; margin-top: 0; padding: 5px; border-radius: 5px; 
-        position: relative; left: 50%; transform: translateX(-50%);">
+    <iframe id="Microsoft" class="imageContainer" data-service="Microsoft">
     </iframe>
 </div>
 </div>
@@ -1418,17 +1417,7 @@
 
          
          
-        <div class="unique-controls">
-         <img src="https://iili.io/3dcTzzu.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
-           <div class="tab-container">
-                <button class="nav-button" onclick="toggleTab(this, 'Music2')"><span>Text Glitch
-                    <i class="fab fa-google-wallet"style="color: #d88f00;"></i>
-                    </span>
-                </button>
-                <iframe class="imageContainer" data-service="Music2" style=" height: 80vh; border: none;"></iframe>
 
-            </div>
-         </div>
                             <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
             
           <div class="unique-controls">
@@ -1445,7 +1434,7 @@
         <div class="unique-controls">
          <img src="https://iili.io/39gOjOG.png?nocache=123" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; pointer-events: none;">
            <div class="tab-container">
-            <button id="generate" onclick="location.href='https://tommydev27.github.io/Galeri/';" style="border: 1px solid gray; color: #333; border-radius: 3px; font-size: 14px; padding: 2px 5px; cursor: pointer; margin-top: 5px; font-weight: bold;">
+            <button id="generate" onclick="location.href='https://tommydev27.github.io/Galeri/';" style="color: #333; border-radius: 8px; font-size: 15px; padding: 8px 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">
             Galeri <i style="  margin-left: 5px; font-size: 15px; color: #04a4bbfb; " class="fa fa-image"></i>
             </button>
 
@@ -1616,35 +1605,50 @@
             </script>
             
 <script>
+    let isIframeOpen = false; // Status iframe terbuka atau tidak
+
     function toggleTab(button, name) {
-        const parentDiv = button.closest(".tab-container"); // Mencari dalam container terkait
+        const parentDiv = button.closest(".tab-container");
         const iframe = parentDiv.querySelector("iframe");
 
         if (!iframe) return;
 
         const currentUrl = getUrlForTab(name);
 
+        // Jika iframe terbuka dengan URL yang sama, tutup iframe
         if (iframe.style.display === 'block' && iframe.src === currentUrl) {
             iframe.style.display = 'none';
-        } else {
-            document.querySelectorAll(".tab-container iframe").forEach(el => {
-                el.style.display = "none";
-            });
-
-            iframe.src = currentUrl; // Jangan kosongkan src agar tidak reload
-            iframe.style.display = 'block';
-
-            // Tunggu sebentar agar tampilan stabil sebelum scrolling
-            setTimeout(() => {
-                iframe.scrollIntoView({ behavior: "smooth", block: "center" });
-            }, 100);
+            isIframeOpen = false;
+            history.pushState(null, null, location.href); // Tambah entri di riwayat agar tombol kembali tetap berfungsi
+            return;
         }
+
+        // Sembunyikan semua iframe sebelum menampilkan yang baru
+        document.querySelectorAll(".tab-container iframe").forEach(el => {
+            el.style.display = "none";
+        });
+
+        // Jika iframe belum memiliki URL yang benar, ubah src
+        if (iframe.src !== currentUrl) {
+            iframe.src = currentUrl;
+        }
+
+        iframe.style.display = 'block';
+        isIframeOpen = true;
+
+        // Tambahkan state ke history agar tombol kembali bisa menutup iframe lebih dulu
+        history.pushState(null, null, location.href);
+
+        // Tunggu sebentar agar tampilan stabil sebelum scrolling
+        setTimeout(() => {
+            iframe.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 100);
     }
 
     function getUrlForTab(name) {
         const urls = {
             'DeepAi': 'https://tommydev27.github.io/tommy-website.oi/',
-            'Microsoft': 'https://tommydev27.github.io/Keyboardtmdev//',
+            'Microsoft': 'https://tommydev27.github.io/Keyboardtmdev/',
             'Replit AI': 'https://tommydev27.github.io/tommy.website3/',
             'DeepSeek': 'https://tommydev27.github.io/tommy.website-demo/',
             'Music': 'https://tommydev27.github.io/MusicTM/',
@@ -1652,7 +1656,24 @@
         };
         return urls[name] || '';
     }
+
+    // Menangani tombol "Kembali" bawaan smartphone
+    window.addEventListener("popstate", function () {
+        if (isIframeOpen) {
+            document.querySelectorAll(".tab-container iframe").forEach(el => {
+                el.style.display = "none";
+            });
+            isIframeOpen = false;
+            history.pushState(null, null, location.href); // Tambah state agar tidak langsung keluar
+        } else {
+            history.back(); // Kembali ke laman sebelumnya jika tidak ada iframe terbuka
+        }
+    });
+
+    // Inisialisasi state pertama kali agar tombol kembali berfungsi dengan baik
+    history.pushState(null, null, location.href);
 </script>
+
 
 
 
