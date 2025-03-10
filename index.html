@@ -75,72 +75,85 @@ Situs ini dibuat untuk berbagi karya seni AI dan desain ASCII. Temukan inspirasi
 </div>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style> 
+<style>
+    .wrappertm {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
 
-        .wrappertm {
-            display: flex;
-            justify-content: center;
-            padding: 0px;
-        }
+    .tommydev {
+        display: flex;
+        gap: 10px;
+        padding: 0px;
+    }
 
-        .tommydev {
-            display: flex;
-            gap: 10px;
-            padding: 0px;;
-        }
+    .group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
 
-        .group {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            padding: 10px;
-        }
+    .group a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 50px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 24px;
+        border: 1px solid #d7d7d7;
+        color: #4d4848;
+        box-shadow: 
+            -3px 0px 4px rgba(0, 0, 0, 0.345),
+            -1px 1px 1px rgba(166, 0, 0, 0.5),
+            inset 18px 10px 12px rgb(255, 255, 255),
+            inset 0px -1px 1px rgb(255, 255, 255);
+        transition: 0.3s ease-in-out;
+    }
 
-        .group a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 50px;
-            background-color: #ffffff;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 24px;
-            border: 1px solid #d7d7d7;
-            color: #4d4848;
-            box-shadow:
-                -3px 0px 4px rgba(0,0,0,0.345),
-                -1px 1px 1px rgba(166,0,0,0.5),
-                inset 18px 10px 12px rgb(255,255,255),
-                inset 0px -1px 1px rgb(255,255,255);
-            transition: 0.2s ease-in-out;
-        }
+    /* Hover Effect */
+    .group a:hover {
+        background: linear-gradient(45deg, red, blue);
+        color: white;
+        box-shadow: none;
+    }
 
+    /* Active (Clicked) State */
+    .group a:active {
+        background: linear-gradient(45deg, red, blue);
+        color: white;
+        box-shadow: none;
+    }
 
+    .group a:hover i {
+        color: white;  /* Assuming the icon is inside <i> tag */
+    }
 
-        /* Kelompok 2 */
-        .group-2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 5px;
-            background: none;
-            border: none;
-        }
+    /* Kelompok 2 */
+    .group-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+        background: none;
+        border: none;
+    }
 
-        .group-2 a {
-            width: 150px;
-            height: 24px;
-            font-size: 18px;
-        }
-              .group a:hover {
-      -webkit-tap-highlight-color: transparent;
-      }
-      
-              .group a:hover {
-            background: none;
-            color: red;
-        }
-    </style>
+    .group-2 a {
+        width: 150px;
+        height: 24px;
+        font-size: 18px;
+    }
+
+    /* Disable tap highlight on mobile */
+    .group a:hover {
+        -webkit-tap-highlight-color: transparent;
+    }
+</style>
+
 </head>
 <body>
 
