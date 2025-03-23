@@ -1001,6 +1001,7 @@ input[type="text"], select, button {
       
    </head>
 <body>
+  
 <div class="container">
 <h1 style=" padding: 10px; font-size: 16px;"> Web Developer <i style="font-size: 15px; color: #0073eff9;" class="fab fa-facebook"></i></h1>
 
@@ -1249,7 +1250,7 @@ alt=""
           <option value="700">700Px</option>
           <option value="800">800M</option>
           </select><button id="uniqueGenerateBtn" class="unique-generate-btn"
-          style="color: #333; border: none; border-radius: 8px; font-size: 14px; padding: 8px; cursor: pointer; margin-top: 0px; font-weight: bold; margin-left: 10px;">Generate Images<i style="margin-left: 5px; font-size: 15px; color: #fc7f2bf9;" class="fab fa-gripfire"></i></button><button id="uniqueSaveBtn" ></button></div><div id="preset-images" style="margin-top: 10px;"><h3 style="color: #028e33f9; font-size: 15px; margin-bottom: 10px;">
+          style="color: #333; border: none; border-radius: 8px; font-size: 14px; padding: 8px; cursor: pointer; margin-top: 0px; font-weight: bold; margin-left: 10px;">Generate Images<i style="margin-left: 5px; font-size: 15px; color: #fc7f2bf9;" class="fab fa-gripfire"></i></button></div><div id="preset-images" style="margin-top: 10px;"><h3 style="color: #028e33f9; font-size: 15px; margin-bottom: 10px;">
           Gambar Preset klik untuk buat ⇆ Scrollbar
           </h3></div><div class="image-slider-container"><div class="image-slider">
           <img src="https://iili.io/26PHCYb.md.jpg"
@@ -1312,4 +1313,93 @@ alt=""
           button:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
           "><div class="tab-container"><button id="generate" onclick="location.href='https://tommydev27.github.io/Galeri/';" style="color: #333; border-radius: 8px; font-size: 16px; padding: 8px 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">Galeri <i style="margin-left: 5px; font-size: 16px; color: #04a4bbfb;" class="fa fa-image"></i></button></div></div></div></div>
-          <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr><div class="unique-controls"><button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #333; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold;">Info Website<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e33f9;" class="fas fa-exclamation-circle"></i></button></div><div class="unique-controls"><img src="https://iili.io/2D09qqx.png?nocache=123" style="width: 100%; border: none; margin-top: -16px; border-radius: 8px; pointer-events: none; margin-bottom: px; border: 1px solid #eeeeee;"></img><h2 style="font-size: 17px; margin-top: 0px; padding: 0px;">Menu tambahan</h2><p style="font-size: 14px;">website masih dalam tahap pengembangan dan mungkin belum berfungsi secara normal. Beberapa fitur mungkin tidak konsisten atau mengalami gangguan. Kami sedang bekerja untuk meningkatkan pengalaman Anda. Terima kasih atas pengertiannya!</p><div id="scroll-buttons"><button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')"><i class="fab fa-gg-circle"></i><span style= "color: black; margin-top: 10px;">AI Creativity</span></button><button onclick="redirect('https://tommydev27.github.io/tm-text/')"><i class="fas fa-keyboard"></i><span style= "color: black; margin-top: 10px;">Text Art</span></button><button onclick="redirect('https://tommydev27.github.io/tommy.website3/')"><i class="fas fa-id-card-alt"></i><span style= "color: black; margin-top: 10px;">ASCII ART</span></button><button onclick="redirect('https://tommydev27.github.io/devai/')"><i class="fa fa-info-circle"></i><span style= "color: black; margin-top: 10px;">Double Key</span></button></div><div><footer><div class="footer-container"><div class="quick-links"><a>Home<a>Features<a>Privacy Policy<a>Terms & Conditions</a></div><div class="social-media"><a href="https://www.facebook.com" target="_blank" class="social-icon facebook">Facebook</a><a href="https://twitter.com" target="_blank" class="social-icon twitter">Twitter</a><a href="https://instagram.com" target="_blank" class="social-icon instagram">Instagram</a></div><p style="font-size: 15px; color: #dbd3d3; margin-bottom: 3px; margin-top: 5px;">Designer: Tommy | developer (version 0.1.0)</p><div class="copyright">© 2025 Image Creator AI. All rights reserved.</div></footer></div><script>function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content> div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); }</script><script>document.addEventListener("DOMContentLoaded", function () { function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content > div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); } function redirect(url) { window.location.href = url; } function nextPage() { alert("Akan dialihkan ke halaman selanjutnya!"); } function updateDateTime() { const dateTimeElement = document.getElementById("dateTime"); if (!dateTimeElement) return; const options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }; dateTimeElement.textContent = new Date().toLocaleDateString("id-ID", options); } setInterval(updateDateTime, 1000); updateDateTime(); let hasLiked = false; const btnIkuti = document.getElementById("btn-ikuti"); const followersCount = document.getElementById("followers-count"); if (btnIkuti && followersCount) { btnIkuti.addEventListener("click", () => { let currentCount = parseInt(followersCount.textContent.replace('.', '')); if (!hasLiked) { followersCount.textContent = formatNumber(currentCount + 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal'; hasLiked = true; } else { followersCount.textContent = formatNumber(currentCount - 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka'; hasLiked = false; } }); } function formatNumber(num) { return num.toLocaleString("id-ID"); } document.querySelectorAll("#scroll-buttons button").forEach(button => { button.addEventListener("click", function () { const url = this.getAttribute("onclick").match(/'(.*?)'/)[1]; redirect(url); }); }); }); const toggle = document.getElementById("darkModeToggle"); toggle.addEventListener("click", function () { this.classList.toggle("active"); document.body.classList.toggle("dark-mode"); }); </script><script>document.getElementById("iconuniquecontainer").addEventListener("click", function () { this.classList.toggle("active"); });</script><script>let isIframeOpen = false; function toggleTab(button, name) { const parentDiv = button.closest(".tab-container"); const iframe = parentDiv.querySelector("iframe"); if (!iframe) return; const currentUrl = getUrlForTab(name); if (iframe.style.display === 'block' && iframe.src === currentUrl) { iframe.style.display = 'none'; isIframeOpen = false; history.pushState(null, null, location.href); return; } document.querySelectorAll(".tab-container iframe").forEach(el => { el.style.display = "none"; }); if (iframe.src !== currentUrl) { iframe.src = currentUrl; } iframe.style.display = 'block'; isIframeOpen = true; history.pushState(null, null, location.href); setTimeout(() => { iframe.scrollIntoView({ behavior: "smooth", block: "center" }); }, 100); } function getUrlForTab(name) { const urls = { 'DeepAi': 'https://tommydev27.github.io/tommy-website.oi/', 'Microsoft': 'https://tommydev27.github.io/keby/', 'Replit AI': 'https://tommydev27.github.io/tommy.website3/', 'DeepSeek': 'https://tommydev27.github.io/tommy.website-demo/', 'Music': 'https://tommydev27.github.io/MusicTM/', 'Music2': 'https://tommydev27.github.io/glitch-text/' }; return urls[name] || ''; } window.addEventListener("popstate", function () { if (isIframeOpen) { document.querySelectorAll(".tab-container iframe").forEach(el => { el.style.display = "none"; }); isIframeOpen = false; history.pushState(null, null, location.href); } else { history.back(); } }); history.pushState(null, null, location.href); var radius = 90; var autoRotate = true; var rotateSpeed = -30; var imgWidth = 50; var imgHeight = 0; var bgMusicURL = "https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?autoplay=1&loop=1"; var bgMusicControls = false; setTimeout(init, 100); var ospin = document.getElementById("spin-container"); var aImg = ospin.getElementsByTagName("img"); var aVid = ospin.getElementsByTagName("video"); var aEle = [...aImg, ...aVid]; ospin.style.width = imgWidth + 15 + "px"; ospin.style.height = imgHeight + 0 + "px"; function init(delayTime) { for (var i = 0; i < aEle.length; i++) { aEle[i].style.transform = "rotateY(" + i * (360 / aEle.length) + "deg) translateZ(" + radius + "px)"; aEle[i].style.transition = "transform 1s"; aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 5 + "s"; } } function applyTranform(obj) { if (tY > 30) tY = 30; if (tY < -30) tY = -30; obj.style.transform = "rotateX(" + -10 + "deg) rotateY(" + tX + "deg)"; } function playSpin(yes) { ospin.style.animationPlayState = yes ? "running" : "paused"; } var sX, sY, nX, nY, desX = 0, desY = 0, tX = 0, tY = 0; if (autoRotate) { var animationName = rotateSpeed > 0 ? "spin" : "spinRevert"; ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`; } document.onpointerdown = function(e) { clearInterval(odrag.timer); e = e || window.event; var sX = e.clientX, sY = e.clientY; this.onpointermove = function(e) { e = e || window.event; var nX = e.clientX, nY = e.clientY; desX = nX - sX; desY = nY - sY; tX += desX * 0.1; tY += desY * 0.1; applyTranform(odrag); sX = nX; sY = nY; }; this.onpointerup = function(e) { odrag.timer = setInterval(function() { desX *= 0.95; desY *= 0.95; tX += desX * 0.1; tY += desY * 0.1; applyTranform(odrag); playSpin(false); if (Math.abs(desX) < 0.1 && Math.abs(desY) < 0.1) { clearInterval(odrag.timer); playSpin(true); } }, 1); this.onpointermove = this.onpointerup = null; }; return false; }; document.onmousewheel = function(e) { e = e || window.event; var d = e.wheelDelta / 0 || -e.detail; radius += d; init(1); }; </script></secsion></body></html>
+          <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
+          
+<div id="iframeWrapper"></div> <!-- Tempat untuk iframe -->
+
+<script>
+window.addEventListener("load", function () {
+    const container = document.createElement("div");
+    container.id = "rootFbContainer"; // ID untuk mengatur tata letak
+
+    const iframe = document.createElement("iframe");
+    iframe.id = "rootFbIframe"; 
+    iframe.src = "https://tommydev27.github.io/root-fb/";
+    iframe.style.width = "100%";
+    iframe.style.height = "245px";
+    iframe.style.border = "none";
+    iframe.style.display = "block";
+
+    container.appendChild(iframe);
+    document.getElementById("iframeWrapper").appendChild(container);
+});
+</script>
+
+          
+          
+          <div class="unique-controls"><button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #333; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold;">Info Website<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e33f9;" class="fas fa-exclamation-circle"></i></button></div><div class="unique-controls"><img src="https://iili.io/2D09qqx.png?nocache=123" style="width: 100%; border: none; margin-top: -16px; border-radius: 8px; pointer-events: none; margin-bottom: px; border: 1px solid #eeeeee;"></img><h2 style="font-size: 17px; margin-top: 0px; padding: 0px;">Menu tambahan</h2><p style="font-size: 14px;">website masih dalam tahap pengembangan dan mungkin belum berfungsi secara normal. Beberapa fitur mungkin tidak konsisten atau mengalami gangguan. Kami sedang bekerja untuk meningkatkan pengalaman Anda. Terima kasih atas pengertiannya!</p><div id="scroll-buttons"><button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')"><i class="fab fa-gg-circle"></i><span style= "color: black; margin-top: 10px;">AI Creativity</span></button><button onclick="redirect('https://tommydev27.github.io/tm-text/')"><i class="fas fa-keyboard"></i><span style= "color: black; margin-top: 10px;">Text Art</span></button><button onclick="redirect('https://tommydev27.github.io/tommy.website3/')"><i class="fas fa-id-card-alt"></i><span style= "color: black; margin-top: 10px;">ASCII ART</span></button><button onclick="redirect('https://tommydev27.github.io/devai/')"><i class="fa fa-info-circle"></i><span style= "color: black; margin-top: 10px;">Double Key</span></button></div><div><footer><div class="footer-container"><div class="quick-links"><a>Home<a>Features<a>Privacy Policy<a>Terms & Conditions</a></div><div class="social-media"><a href="https://www.facebook.com" target="_blank" class="social-icon facebook">Facebook</a><a href="https://twitter.com" target="_blank" class="social-icon twitter">Twitter</a><a href="https://instagram.com" target="_blank" class="social-icon instagram">Instagram</a></div><p style="font-size: 15px; color: #dbd3d3; margin-bottom: 3px; margin-top: 5px;">Designer: Tommy | developer (version 0.1.0)</p><div class="copyright">© 2025 Image Creator AI. All rights reserved.</div></footer></div><script>function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content> div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); }</script><script>document.addEventListener("DOMContentLoaded", function () { function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content > div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); } function redirect(url) { window.location.href = url; } function nextPage() { alert("Akan dialihkan ke halaman selanjutnya!"); } function updateDateTime() { const dateTimeElement = document.getElementById("dateTime"); if (!dateTimeElement) return; const options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }; dateTimeElement.textContent = new Date().toLocaleDateString("id-ID", options); } setInterval(updateDateTime, 1000); updateDateTime(); let hasLiked = false; const btnIkuti = document.getElementById("btn-ikuti"); const followersCount = document.getElementById("followers-count"); if (btnIkuti && followersCount) { btnIkuti.addEventListener("click", () => { let currentCount = parseInt(followersCount.textContent.replace('.', '')); if (!hasLiked) { followersCount.textContent = formatNumber(currentCount + 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal'; hasLiked = true; } else { followersCount.textContent = formatNumber(currentCount - 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka'; hasLiked = false; } }); } function formatNumber(num) { return num.toLocaleString("id-ID"); } document.querySelectorAll("#scroll-buttons button").forEach(button => { button.addEventListener("click", function () { const url = this.getAttribute("onclick").match(/'(.*?)'/)[1]; redirect(url); }); }); }); const toggle = document.getElementById("darkModeToggle"); toggle.addEventListener("click", function () { this.classList.toggle("active"); document.body.classList.toggle("dark-mode"); }); </script><script>document.getElementById("iconuniquecontainer").addEventListener("click", function () { this.classList.toggle("active"); });</script><script>
+let isIframeOpen = false;
+
+function toggleTab(button, name) {
+    const parentDiv = button.closest(".tab-container");
+    const iframe = parentDiv.querySelector("iframe");
+    if (!iframe) return;
+
+    const currentUrl = getUrlForTab(name);
+
+    if (iframe.style.display === 'block' && iframe.src === currentUrl) {
+        iframe.style.display = 'none';
+        isIframeOpen = false;
+        history.pushState(null, null, location.href);
+        return;
+    }
+
+    document.querySelectorAll(".tab-container iframe").forEach(el => {
+        el.style.display = "none";
+    });
+
+    if (iframe.src !== currentUrl) {
+        iframe.src = currentUrl;
+    }
+
+    iframe.style.display = 'block';
+    isIframeOpen = true;
+    history.pushState(null, null, location.href);
+
+    setTimeout(() => {
+        iframe.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+}
+
+function getUrlForTab(name) {
+    const urls = {
+        'DeepAi': 'https://tommydev27.github.io/tommy-website.oi/',
+        'Microsoft': 'https://tommydev27.github.io/keby/',
+        'Replit AI': 'https://tommydev27.github.io/tommy.website3/',
+        'DeepSeek': 'https://tommydev27.github.io/tommy.website-demo/',
+        'Music': 'https://tommydev27.github.io/MusicTM/',
+        'Music2': 'https://tommydev27.github.io/glitch-text/',
+        'Root-FB': 'https://tommydev27.github.io/root-fb/' // Tambahkan link ini
+    };
+
+    return urls[name] || '';
+}
+
+window.addEventListener("popstate", function () {
+    if (isIframeOpen) {
+        document.querySelectorAll(".tab-container iframe").forEach(el => {
+            el.style.display = "none";
+        });
+        isIframeOpen = false;
+        history.pushState(null, null, location.href);
+    } else {
+        history.back();
+    }
+});
+
+history.pushState(null, null, location.href);
+
+
+</script>
+
+          
