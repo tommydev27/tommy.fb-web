@@ -104,7 +104,7 @@ body.dark-mode .circle-image {
     margin: 0 0 0 15px;
     margin-top: 60px;
     padding: 0;
-    line-height: 1;
+    line-height: 0.85;
 }
 
 body.dark-mode .song-info h2 {
@@ -387,11 +387,13 @@ p {
 
 .date-time {
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 5px;
+    background: #002b3b;
     font-weight: bold;
-    color: #616367;
-    padding: 2px;
-    transform: skew(-10deg);
+    color: #ffeded;
+    border-radius: 5px;
+    padding: 5px;
+    transform: skew(-0deg);
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -400,7 +402,7 @@ body.dark-mode .date-time {
 }
 
 .stats {
-    font-size: 17px;
+    font-size: 12px;
     margin-top: 0;
 }
 
@@ -1035,6 +1037,42 @@ input[type="text"], select, button {
             color: #333;
         }
     </style>
+
+<style>
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: blue;
+        color: white;
+    }
+    33% {
+        background-color: red;
+        color: white;
+    }
+    66% {
+        background-color: white;
+        color: black;
+    }
+}
+
+body.dark-mode #iconunique-container {
+    border: 2px solid #41ff3c;
+    outline: 4px solid #262626;
+    animation: spin 2s linear infinite, blink 1.5s linear infinite;
+    transform-origin: center;
+    transform: scale(1.2);
+}
+</style>
+   
+      
       
    </head>
 <body>
@@ -1042,7 +1080,7 @@ input[type="text"], select, button {
     <div class="loader1"></div>
   </div>
 <div class="container">
-<h1 style=" padding: 10px; font-size: 16px;"> Web Developer <i style="font-size: 15px; color: #0073eff9;" class="fab fa-facebook"></i></h1>
+<h1 style=" padding: 10px; font-size: 12px; font-family: Orbitron;"> TOMMY WEB <i style="font-size: 13px; margin-left:5px; color: #0073eff9;" class="fab fa-facebook"></i></h1>
 
 <div class="profile-card">
 
@@ -1081,7 +1119,7 @@ alt=""
 <style> #drag-container {left: 70px; top: -100px; touch-action: none;} #drag-container, #spin-container {position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; margin: auto; -webkit-transform-style: preserve-3d; transform-style: preserve-3d; -webkit-transform: rotateX(-10deg); transform: rotateX(-10deg);} #drag-container img, #drag-container video {-webkit-transform-style: preserve-3d; transform-style: preserve-3d; position: absolute; border-radius: 8px; border: 3px solid #333; align-items: center; width: 60px; height: 110px; line-height: 50px; text-align: center; -webkit-box-shadow: 0 0 0px #fff; box-shadow: 0 0 0px #fff; -webkit-box-reflect: below 20px linear-gradient(transparent, transparent, #0005);} #drag-container img:hover, #drag-container video:hover {-webkit-box-shadow: 0 0 0 px #fffd; box-shadow: 0 0 0 px #0056b3; -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, #0007);} #drag-container p {font-family: Serif; position: absolute; display: flex; top: 100px; left: 50%; font-size: 50px; -webkit-transform: translate(-50%, -50%) rotateX(90deg); transform: translate(-50%, -50%) rotateX(90deg); color: #1b74e4;} #ground {position: absolute; align-items: center;} @-webkit-keyframes spinRevert {from {-webkit-transform: rotateY(360deg); transform: rotateY(360deg);} to {-webkit-transform: rotateY(0deg); transform: rotateY(0deg);}} </style>
 </div><div class="profile-image-container"><img src="https://iili.io/3IF1Q4I.jpg" alt="Profile" class="circle-image"></div><div id="iconunique-container" onclick="window.location.href='user.html';"><i class="fab fa-ubuntu" style=" font-size: 23px;"> </i></div> <div class="song-info"> <h2 id="song-title">
     Tommy<span class="native-text" style="color:#1b74e4; font-size: 20px; vertical-align: 1px; font-weight: normal;">&nbsp;󱢏</span><a id="song-title" style="font-family: 'Orbitron', sans-serif; font-size: 22px; color: #015a78;">&nbsp WEB-27 <i class="fab fa-optin-monster" style="color: #be004d; font-size: 24px;"></i><i class="fab fa-opencart" style="color: #14c705; font-size: 23px;"></i><i class="fab fa-gripfire" style="color: #14c705;"></i><i class="fab fa-whatsapp" style="color: #14c705;"></i>
- </a><p><span>︻</span><span style="color: #9d4801;">み</span><span style="color: #df052a;">✪</span><span style="color: #8d1105;">🝛</span><span>━━─────╼ <span>💥</span></p><p style="display: inline-block; transform: skewX(10deg); color: #0e7285; font-size: 23px;"> ⎝⎝✪⎞⎞</p><i style="color: #9f002b; font-size: 23px;">⏜⎛⎛⚆⎠⎠</i> <i style="color: #9f002b; font-size: 30px;" class="fab fa-pied-piper-alt"></i> <i style="color: #8405a3; font-size: 25px;" class="fab fa-earlybirds"></i> <a id="song-title" style="font-family: 'Orbitron', sans-serif; font-size: 26px; color:#00882d; font-style: italic;">2025 <i style="font-size: 25px; color: #2C98F0;" class="fab fa-skyatlas"></i></a>
+ </a><p><span>︻</span><span style="color: #9d4801;">み</span><span style="color: #df052a;">✪</span><span style="color: #8d1105;">🝛</span><span>━━─────╼ <span>💥</span></p><p style="display: inline-block; transform: skewX(10deg); color: #0e7285; font-size: 23px;body.dark-mode #icon {color: #fc1826 !important;}">⎝⎝✪⎞⎞</p><i id="icon" style="color: #9f002b; font-size: 22px;">⏜⎛⎛⚆⎠⎠</i><style>body.dark-mode #icon {color: #fc1826 !important;}</style> <i style="color: #9f002b; font-size: 30px;" class="fab fa-pied-piper-alt"></i> <i style="color: #8405a3; font-size: 25px;" class="fab fa-earlybirds"></i><style>body.dark-mode .fab.fa-pied-piper-alt {color: #00b0ff !important;}body.dark-mode .fab.fa-earlybirds {color: #f2e901 !important;}</style> <a id="song-title" style="font-family: 'Orbitron', sans-serif; font-size: 26px; color:#00882d; font-style: italic;">2025 <i style="font-size: 25px; color: #2C98F0;" class="fab fa-skyatlas"></i></a>
  
  <p class="profile-description">Tommy  Official | Website APP V0.1.0
 </p>
@@ -1129,7 +1167,7 @@ alt=""
               <div style="display: flex; align-items: center; font-size: 15px; padding-top: 5px; font-weight: bold;">
               <span style="color: #ffcb39;">★ ★ ★ ★<a style="color: #d5d3d0;"> ★ </a></span>
               <div style="width: 150px; height: 6px; background-color: #6099ff; margin-left: 5px; border-radius: 50px;"></div>
-              </div><div id="timeContainer"><p id="dateTime" class="date-time"></p></h2></div><div class="darkmode" id="darkModeToggle"><div class="toggle-circle"></div>
+              </div></h2></div><div class="darkmode" id="darkModeToggle"><div class="toggle-circle"></div>
               <p class="darkmode-label">mode</p></div><div id="container"><div id="profil-header">
                 
                 <button id="btn-pesan" style="color: #fff; font-size: 16px; background-color: #1b74e4; -webkit-tap-highlight-color: transparent; cursor: pointer;" 
@@ -1227,15 +1265,16 @@ alt=""
             .group a:hover {
                 -webkit-tap-highlight-color: transparent;
             }
-        </style>
+            </style>
 
-      </head>
-    <body>
-    
-    <div class="wrappertm">
-        <div class="tommydev">
+              </head>
+                <body>
+                 <h2 style="font-size: 20px; margin-top: -8px; padding: 0px; ">Tab scroll bagian atas</h2>
+              <div class="wrappertm">
+            <div class="tommydev">
             <!-- Kelompok 1 -->
-            <div class="group">
+
+              <div class="group">
                 <a href="Page(20).html" target="_blank"><i class="fa-solid fa-circle-user" style="color: #73a8ee;" ></i></a>
                 <a href="https://tommydev27.github.io/tommy-website.oi/" target="_blank"><i class="fas fa-atom" style="color: #6ac86f;" ></i></a>
                 <a href="https://tommydev27.github.io/Galeri/" target="_blank"><i class="fa-solid fa-masks-theater" style="color: #e76060;" ></i></a>
@@ -1250,10 +1289,10 @@ alt=""
                 <a href="https://tommydev27.github.io/glitch-text" target="_blank"><i class="fab fa-opencart"></i></a>
               </div>
           </div>
-       </div>
+           </div>
 
           <style>#image-scroll-container {width: 100%; height: auto; margin-top: 0px; overflow-x: auto; border-radius: 10px; padding-left: 3px; display: flex; position: relative; scroll-behavior: smooth;} #image-wrapper {display: flex; gap: 13px;} #image-wrapper img {width: 100px; height: 210px; border-radius: 10px; border: 3px solid #b7a3a3; transition: box-shadow 0.3s;          </style>
-          <h2 style="font-size: 20px; margin-top: 3px; padding: 0px; ">Menu Dashboard<i style=" margin-left: 5px; font-size: 19px;" class="fas fa-chart-pie"></i></h2><div class="list-container">
+          <h2 style="font-size: 20px; margin-top: 3px; padding: 0px; ">Dashboard<i style=" margin-left: 5px; font-size: 19px;" class="fas fa-chart-pie"></i></h2><div class="list-container">
           <div class="list-item">
           <b id="b2">1.</b>
           <p id="p2">Buat Gambar</p>
@@ -1263,8 +1302,15 @@ alt=""
           </div><div class="list-item">
           <b id="b2">3.</b>
           <p id="p2">Glitch text / text over / Generator text style</p>
-          </div></div></div>
+          </div>
+<div id="timeContainer"><p id="dateTime" class="date-time"></p>
+<img src="https://iili.io/3IeW1x2.png" style="width: 100%; height: auto; 
+           border-radius: 8px; pointer-events: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+          }
           
+          button:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */ ">
+            </div></div></div>
           <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr><div class="unique-image-container">
           <h2 style=" font-size: 18px; margin-top: 0px; margin-left: 8px;"> Buat gambar tulis prompt / Description</h2>
           <p style="font-size: 13px; margin-left: 8px;">
@@ -1324,57 +1370,55 @@ alt=""
           button:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
           "><div class="tab-container"><button class="nav-button" onclick="toggleTab(this, 'Microsoft')"><span>Keyboard <i class="fas fa-keyboard"></i></span></button>
-            
-            <div class="unique-controls">
-                <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px; width: 100vw; margin-left: -30px;">
-            </div>
-          
+ 
           <script>window.addEventListener("beforeunload", () => { sessionStorage.setItem("scrollY", window.scrollY); }); window.addEventListener("load", () => { let savedScrollY = sessionStorage.getItem("scrollY"); if (savedScrollY !== null) { window.scrollTo(0, parseInt(savedScrollY)); } }); let scrollContainer = document.getElementById("image-scroll-container"); window.addEventListener("beforeunload", () => { sessionStorage.setItem("scrollX", scrollContainer.scrollLeft); }); window.addEventListener("load", () => { let savedScrollX = sessionStorage.getItem("scrollX"); if (savedScrollX !== null) { scrollContainer.scrollLeft = parseInt(savedScrollX); } }); let timeout; scrollContainer.addEventListener("touchstart", () => { clearTimeout(timeout); }); scrollContainer.addEventListener("touchend", () => { timeout = setTimeout(() => { scrollContainer.scrollLeft += 1; }, 10000); }); </script><iframe id="Microsoft" class="imageContainer" data-service="Microsoft"></iframe></div></div><div class="unique-controls">
-          <h2 style="font-size: 17px; margin-top: -35px; padding: 0px;">Glitch Text Generator</h2><img src="https://iili.io/3zgOV3X.png" style="width: 100%; height: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+          <h2 style="font-size: 17px; margin-top: -5px; padding: 0px;">Glitch Text Generator</h2><img src="https://iili.io/3zgOV3X.png" style="width: 100%; height: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
           }
           
           button:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
-           border-radius: 8px; pointer-events: none; margin-top: 12px;"><div class="tab-container"><button id="generate" onclick="location.href='https://tommydev27.github.io/glitch-text/';" style="color: black; border-radius: 5px; font-size: 16px; padding: 7px 10px; cursor: pointer; margin-top: 5px; font-weight: bold; width: 100%; background: #c2c8cf;">Glitch Text <i style="margin-left: 5px; font-size: 16px; color: #036494;" class="fas fa-barcode"></i></button></div></div><div><hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr></div><div class="unique-controls"><h2 style="font-size: 17px; margin-top: 0px; padding: 0px;">Generator Text</h2><img src="https://iili.io/3zg6CSp.png" style="width: 100%; height: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+           border-radius: 8px; pointer-events: none; margin-top: 12px;"><div class="tab-container"><button id="generate" onclick="location.href='https://tommydev27.github.io/glitch-text/';" style="color: black; border-radius: 5px; font-size: 16px; padding: 7px 10px; cursor: pointer; margin-top: 5px; font-weight: bold; width: 100%; background: #c2c8cf;">Glitch Text <i style="margin-left: 5px; font-size: 16px; color: #036494;" class="fas fa-barcode"></i></button></div></div><div></div><div class="unique-controls"><h2 style="font-size: 17px; margin-top: -5px; padding: 0px;">Generator Text</h2><img src="https://iili.io/3zg6CSp.png" style="width: 100%; height: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
           }
           
           button:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
            border-radius: 8px; pointer-events: none; margin-top: 12px;"><div class="tab-container"><button id="generate" onclick="location.href='https://tommydev27.github.io/tm-textGz/';" style="color: black; border-radius: 5px; font-size: 16px; padding: 7px 10px; cursor: pointer; margin-top: 5px; font-weight: bold; width: 100%; background: #c2c8cf;">Generator Text<i style="margin-left: 5px; font-size: 16px; color: #036494;" class="fas fa-align-left"></i></button></div></div><div>
-          <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr></div><div class="unique-controls"><h2 style="font-size: 17px; margin-top: -3px; padding: 0px;">Musik</h2><p style="font-size: 12px;">koleksi dan hiburan</p><img src="https://iili.io/3zP6mru.png" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+            <div class="unique-controls"><img src="https://iili.io/3IeMx5v.png" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none; margin-top: -5px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
+                      }
+                      
+          button:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
+          "><div class="tab-container"><button id="generate" onclick="location.href='https://tommydev27.github.io/Galeri/';" style="color: #333; border-radius: 8px; font-size: 16px; padding: 8px 10px; width: 100%; background: #c2c8cf; cursor: pointer; margin-top: 5px; font-weight: bold;">Font Text <i style="margin-left: 5px; font-size: 16px; color: #01899dfb;" class="fa fa-image"></i></button>           
+            <div class="unique-controls">
+                <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px; width: 100vw; margin-left: -30px;">
+            </div>
+          </div><h2 style="font-size: 17px; margin-top: 5px; padding: 0px;">Musik</h2><p style="font-size: 12px;">koleksi dan hiburan</p><img src="https://iili.io/3zP6mru.png" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
           }
           
           button:hover {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
-          "><div class="tab-container"><button class="nav-button" onclick="toggleTab(this, 'Music')"><span>Music <i class="fas fa-headphones"></i></span></button><iframe class="imageContainer" data-service="Music" style="display:none;"></iframe><img src="https://iili.io/3zsxfSt.png" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none; margin-top: 12px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan tombol */
-          }
-          
-          button:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan saat hover */
-          "><div class="tab-container"><button id="generate" onclick="location.href='https://tommydev27.github.io/Galeri/';" style="color: #333; border-radius: 8px; font-size: 16px; padding: 8px 10px; cursor: pointer; margin-top: 5px; font-weight: bold;">Galeri <i style="margin-left: 5px; font-size: 16px; color: #04a4bbfb;" class="fa fa-image"></i></button></div></div></div></div>
+          "><div class="tab-container"><button class="nav-button" onclick="toggleTab(this, 'Music')"><span>Music <i class="fas fa-headphones"></i></span></button><iframe class="imageContainer" data-service="Music" style="display:none;"></iframe></div></div></div>
           <hr style="background-color: #c3c0c0; height: 4px; border: none; margin: 0; width: 100%; display: flex; margin-top: 0px;"></hr>
           
-<div id="iframeWrapper"></div> <!-- Tempat untuk iframe -->
-
-<script>
-window.addEventListener("load", function () {
-    const container = document.createElement("div");
-    container.id = "rootFbContainer"; // ID untuk mengatur tata letak
-
-    const iframe = document.createElement("iframe");
-    iframe.id = "rootFbIframe"; 
-    iframe.src = "https://tommydev27.github.io/root-fb/";
-    iframe.style.width = "100%";
-    iframe.style.height = "245px";
-    iframe.style.border = "none";
-    iframe.style.display = "block";
-
-    container.appendChild(iframe);
-    document.getElementById("iframeWrapper").appendChild(container);
-});
-</script>
-
+          <div id="iframeWrapper"></div>
           
+          <script>
+          window.addEventListener("load", function () {
+              const container = document.createElement("div");
+              container.id = "rootFbContainer"; // ID untuk mengatur tata letak
           
-          <div class="unique-controls"><button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #333; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold;">Info Website<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e33f9;" class="fas fa-exclamation-circle"></i></button></div><div class="unique-controls"><img src="https://iili.io/3IopkXf.png" style="width: 100%; border: none; margin-top: -16px; border-radius: 8px; pointer-events: none; margin-bottom: px; border: 1px solid #eeeeee;"></img><h2 style="font-size: 17px; margin-top: 0px; padding: 0px;">Menu tambahan</h2><p style="font-size: 14px;">website masih dalam tahap pengembangan dan mungkin belum berfungsi secara normal. Beberapa fitur mungkin tidak konsisten atau mengalami gangguan. Kami sedang bekerja untuk meningkatkan pengalaman Anda. Terima kasih atas pengertiannya!</p><div id="scroll-buttons"><button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')"><i class="fab fa-gg-circle"></i><span style= "color: black; margin-top: 10px;">AI Creativity</span></button><button onclick="redirect('https://tommydev27.github.io/tm-text/')"><i class="fas fa-keyboard"></i><span style= "color: black; margin-top: 10px;">Text Art</span></button><button onclick="redirect('https://tommydev27.github.io/tommy.website3/')"><i class="fas fa-id-card-alt"></i><span style= "color: black; margin-top: 10px;">ASCII ART</span></button><button onclick="redirect('https://tommydev27.github.io/devai/')"><i class="fa fa-info-circle"></i><span style= "color: black; margin-top: 10px;">Double Key</span></button></div><div><footer><div class="footer-container"><div class="quick-links"><a>Home<a>Features<a>Privacy Policy<a>Terms & Conditions</a></div><div class="social-media"><a href="https://www.facebook.com" target="_blank" class="social-icon facebook">Facebook</a><a href="https://twitter.com" target="_blank" class="social-icon twitter">Twitter</a><a href="https://instagram.com" target="_blank" class="social-icon instagram">Instagram</a></div><p style="font-size: 15px; color: #dbd3d3; margin-bottom: 3px; margin-top: 5px;">Designer: Tommy | developer (version 0.1.0)</p><div class="copyright">© 2025 Image Creator AI. All rights reserved.</div></footer></div><script>function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content> div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); }</script><script>document.addEventListener("DOMContentLoaded", function () { function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content > div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); } function redirect(url) { window.location.href = url; } function nextPage() { alert("Akan dialihkan ke halaman selanjutnya!"); } function updateDateTime() { const dateTimeElement = document.getElementById("dateTime"); if (!dateTimeElement) return; const options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }; dateTimeElement.textContent = new Date().toLocaleDateString("id-ID", options); } setInterval(updateDateTime, 1000); updateDateTime(); let hasLiked = false; const btnIkuti = document.getElementById("btn-ikuti"); const followersCount = document.getElementById("followers-count"); if (btnIkuti && followersCount) { btnIkuti.addEventListener("click", () => { let currentCount = parseInt(followersCount.textContent.replace('.', '')); if (!hasLiked) { followersCount.textContent = formatNumber(currentCount + 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal'; hasLiked = true; } else { followersCount.textContent = formatNumber(currentCount - 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka'; hasLiked = false; } }); } function formatNumber(num) { return num.toLocaleString("id-ID"); } document.querySelectorAll("#scroll-buttons button").forEach(button => { button.addEventListener("click", function () { const url = this.getAttribute("onclick").match(/'(.*?)'/)[1]; redirect(url); }); }); }); const toggle = document.getElementById("darkModeToggle"); toggle.addEventListener("click", function () { this.classList.toggle("active"); document.body.classList.toggle("dark-mode"); }); </script><script>document.getElementById("iconuniquecontainer").addEventListener("click", function () { this.classList.toggle("active"); });</script><script>
+              const iframe = document.createElement("iframe");
+              iframe.id = "rootFbIframe"; 
+              iframe.src = "https://tommydev27.github.io/root-fb/";
+              iframe.style.width = "100%";
+              iframe.style.height = "245px";
+              iframe.style.border = "none";
+              iframe.style.display = "block";
+          
+              container.appendChild(iframe);
+              document.getElementById("iframeWrapper").appendChild(container);
+          });
+          </script>
+
+          <div class="unique-controls"><button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #333; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold;">Info Website<i style=" color: #333; margin-left: 5px; font-size: 15px; color: #028e33f9;" class="fas fa-exclamation-circle"></i></button></div><div class="unique-controls"><img src="https://iili.io/3zsxfSt.png" style="width: 100%; border: none; margin-top: -16px; border-radius: 8px; pointer-events: none; margin-bottom: px; border: 1px solid #eeeeee;"></img><h2 style="font-size: 17px; margin-top: 0px; padding: 0px;">Menu tambahan</h2><p style="font-size: 14px;">website masih dalam tahap pengembangan dan mungkin belum berfungsi secara normal. Beberapa fitur mungkin tidak konsisten atau mengalami gangguan. Kami sedang bekerja untuk meningkatkan pengalaman Anda. Terima kasih atas pengertiannya!</p><div id="scroll-buttons"><button onclick="redirect('https://tommydev27.github.io/Tommy-Website/')"><i class="fab fa-gg-circle"></i><span style= "color: black; margin-top: 10px;">AI Creativity</span></button><button onclick="redirect('https://tommydev27.github.io/tm-text/')"><i class="fas fa-keyboard"></i><span style= "color: black; margin-top: 10px;">Text Art</span></button><button onclick="redirect('https://tommydev27.github.io/tommy.website3/')"><i class="fas fa-id-card-alt"></i><span style= "color: black; margin-top: 10px;">ASCII ART</span></button><button onclick="redirect('https://tommydev27.github.io/devai/')"><i class="fa fa-info-circle"></i><span style= "color: black; margin-top: 10px;">Double Key</span></button></div><div><footer><div class="footer-container"><div class="quick-links"><a>Home<a>Features<a>Privacy Policy<a>Terms & Conditions</a></div><div class="social-media"><a href="https://www.facebook.com" target="_blank" class="social-icon facebook">Facebook</a><a href="https://twitter.com" target="_blank" class="social-icon twitter">Twitter</a><a href="https://instagram.com" target="_blank" class="social-icon instagram">Instagram</a></div><p style="font-size: 15px; color: #dbd3d3; margin-bottom: 3px; margin-top: 5px;">Designer: Tommy | developer (version 0.1.0)</p><div class="copyright">© 2025 Image Creator AI. All rights reserved.</div></footer></div><script>function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content> div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); }</script><script>document.addEventListener("DOMContentLoaded", function () { function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content > div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); } function redirect(url) { window.location.href = url; } function nextPage() { alert("Akan dialihkan ke halaman selanjutnya!"); } function updateDateTime() { const dateTimeElement = document.getElementById("dateTime"); if (!dateTimeElement) return; const options = { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false }; dateTimeElement.textContent = new Date().toLocaleDateString("id-ID", options); } setInterval(updateDateTime, 1000); updateDateTime(); let hasLiked = false; const btnIkuti = document.getElementById("btn-ikuti"); const followersCount = document.getElementById("followers-count"); if (btnIkuti && followersCount) { btnIkuti.addEventListener("click", () => { let currentCount = parseInt(followersCount.textContent.replace('.', '')); if (!hasLiked) { followersCount.textContent = formatNumber(currentCount + 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Batal'; hasLiked = true; } else { followersCount.textContent = formatNumber(currentCount - 1); btnIkuti.innerHTML = '<i class="fas fa-thumbs-up"></i> Suka'; hasLiked = false; } }); } function formatNumber(num) { return num.toLocaleString("id-ID"); } document.querySelectorAll("#scroll-buttons button").forEach(button => { button.addEventListener("click", function () { const url = this.getAttribute("onclick").match(/'(.*?)'/)[1]; redirect(url); }); }); }); const toggle = document.getElementById("darkModeToggle"); toggle.addEventListener("click", function () { this.classList.toggle("active"); document.body.classList.toggle("dark-mode"); }); </script><script>document.getElementById("iconuniquecontainer").addEventListener("click", function () { this.classList.toggle("active"); });</script><script>
             let isIframeOpen = false; function toggleTab(button, name) { const parentDiv = button.closest(".tab-container"); const iframe = parentDiv.querySelector("iframe"); if (!iframe) return; const currentUrl = getUrlForTab(name); if (iframe.style.display === 'block' && iframe.src === currentUrl) { iframe.style.display = 'none'; isIframeOpen = false; history.pushState(null, null, location.href); return; } document.querySelectorAll(".tab-container iframe").forEach(el => { el.style.display = "none"; }); if (iframe.src !== currentUrl) { iframe.src = currentUrl; } iframe.style.display = 'block'; isIframeOpen = true; history.pushState(null, null, location.href); setTimeout(() => { iframe.scrollIntoView({ behavior: "smooth", block: "center" }); }, 100); } function getUrlForTab(name) { const urls = { 'DeepAi': 'https://tommydev27.github.io/tommy-website.oi/', 'Microsoft': 'https://tommydev27.github.io/keby/', 'Replit AI': 'https://tommydev27.github.io/tommy.website3/', 'DeepSeek': 'https://tommydev27.github.io/tommy.website-demo/', 'Music': 'https://tommydev27.github.io/MusicTM/', 'Music2': 'https://tommydev27.github.io/glitch-text/' }; return urls[name] || ''; } window.addEventListener("popstate", function () { if (isIframeOpen) { document.querySelectorAll(".tab-container iframe").forEach(el => { el.style.display = "none"; }); isIframeOpen = false; history.pushState(null, null, location.href); } else { history.back(); } }); history.pushState(null, null, location.href); var radius = 90; var autoRotate = true; var rotateSpeed = -30; var imgWidth = 50; var imgHeight = 0; var bgMusicURL = "https://www.youtube.com/embed/YOUTUBE_VIDEO_ID?autoplay=1&loop=1"; var bgMusicControls = false; setTimeout(init, 100); var ospin = document.getElementById("spin-container"); var aImg = ospin.getElementsByTagName("img"); var aVid = ospin.getElementsByTagName("video"); var aEle = [...aImg, ...aVid]; ospin.style.width = imgWidth + 15 + "px"; ospin.style.height = imgHeight + 0 + "px"; function init(delayTime) { for (var i = 0; i < aEle.length; i++) { aEle[i].style.transform = "rotateY(" + i * (360 / aEle.length) + "deg) translateZ(" + radius + "px)"; aEle[i].style.transition = "transform 1s"; aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 5 + "s"; } } function applyTranform(obj) { if (tY > 30) tY = 30; if (tY < -30) tY = -30; obj.style.transform = "rotateX(" + -10 + "deg) rotateY(" + tX + "deg)"; } function playSpin(yes) { ospin.style.animationPlayState = yes ? "running" : "paused"; } var sX, sY, nX, nY, desX = 0, desY = 0, tX = 0, tY = 0; if (autoRotate) { var animationName = rotateSpeed > 0 ? "spin" : "spinRevert"; ospin.style.animation = `${animationName} ${Math.abs(rotateSpeed)}s infinite linear`; } document.onpointerdown = function(e) { clearInterval(odrag.timer); e = e || window.event; var sX = e.clientX, sY = e.clientY; this.onpointermove = function(e) { e = e || window.event; var nX = e.clientX, nY = e.clientY; desX = nX - sX; desY = nY - sY; tX += desX * 0.1; tY += desY * 0.1; applyTranform(odrag); sX = nX; sY = nY; }; this.onpointerup = function(e) { odrag.timer = setInterval(function() { desX *= 0.95; desY *= 0.95; tX += desX * 0.1; tY += desY * 0.1; applyTranform(odrag); playSpin(false); if (Math.abs(desX) < 0.1 && Math.abs(desY) < 0.1) { clearInterval(odrag.timer); playSpin(true); } }, 1); this.onpointermove = this.onpointerup = null; }; return false; }; document.onmousewheel = function(e) { e = e || window.event; var d = e.wheelDelta / 0 || -e.detail; radius += d; init(1); }; </script></secsion></body></html>
